@@ -20,7 +20,7 @@ session_start();
 </script>
     <meta charset="UTF-8">
     <meta name='viweport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
-    <link rel="stylesheet" href = "register_css.css">
+    <link rel="stylesheet" href = "editprofile_css.css">
     <title>แก้ไขข้อมูลส่วนตัว</title>
     <!-- test -->
 </head>
