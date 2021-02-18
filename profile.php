@@ -7,7 +7,7 @@ session_start();
 <head>
     <title>ข้อมูลส่วนตัว</title>
 </head>
-
+<!-- test -->
 <body>
     
 	<?php
