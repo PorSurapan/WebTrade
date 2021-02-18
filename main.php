@@ -3,9 +3,23 @@
 
 	if (isset($_SESSION['logged']) && $_SESSION['logged'] == true)
 		include("header_admin.html");
+	else
+		//go to login
 ?>
 
 <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Trade - สินค้าเทรด</title>
+    <link rel="stylesheet" href="show_product.css">
+
+	<script type="text/javascript">
+        function edt(ind)
+        {
+            window.location.href = "manage_product.php?id=" + ind;
+        }
+    </script>
+</head>
 <body>
 	ค้นหา <input type="text" name="search" id="search" placeholder="กรอกชื่อสินค้า" />
 
@@ -30,5 +44,39 @@
 		<option value="เครื่องเขียน หนังสือ และดนตรี">เครื่องเขียน หนังสือ และดนตรี</option>
 		<option value="อื่น ๆ">อื่น ๆ</option>
 	</select>
+
+	<?php
+        $conn = mysqli_connect("localhost", "root", "", "trader");
+        $conn->query("SET NAMES UTF8");
+        $sql = "SELECT * FROM products WHERE hide = 1";
+        $rs = $conn->query($sql);
+		$i = 0;
+
+		echo "<table align='center'>";
+        	echo "<tr>";
+				while($row = $rs->fetch_assoc()) {
+					if ($i % 5 == 0) {
+						echo "</tr>";
+						echo "<tr>";
+					}
+
+					echo "<td>";
+					echo "<div class='card'>";
+					echo "<img src='resource/" . $row['picture'] . "'" . "style='width:100%'>";
+					echo "<h2>" . $row['name'] . "</h2>";
+					echo "<p>" . $row['category'] . "</p>";
+					echo "<p class='price'>" . $row['status'] . "</p>";
+					echo "<p><button onclick='edt(" . $row['id'] . ")'>จัดการ</button></p>";
+					echo "</div>";
+					echo "</td>";
+
+					$i++;
+				}
+			echo "</tr>";
+		echo "</table>";
+
+        $conn->close();
+	?>
+
 </body>
 </html>
