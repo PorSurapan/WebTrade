@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Trade - เข้าสู่ระบบหรือสร้างบัญชีใหม่</title>
+    <link rel="stylesheet" href="login_css.css">
+    <script src="checkLogin.js"></script>
+</head>
+
+<body>
+    <table align="center" class="cener">
+        <tr>
+            <td>
+                <img src="resource/hand.png" height="400px" />
+            </td>
+            <td align="center">
+                <form action="check_login.php" method="post">
+                    <div class="box">
+                        <h1>ล็อคอิน</h1>
+                        <input type="text" name="username" id="username" class="email" placeholder="ชื่อผู้ใช้" required/>
+                        <br /><br />
+                        <input type="password" name="password" id="password" class="password" placeholder="รหัสผ่าน" required/>
+                        <br /><br />
+                        <p id="failed" class="p"></p>
+                        <input type="submit" value="เข้าสู่ระบบ" class="btn" />
+                        <div id="btn2">สมัครสมาชิก</div>
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
