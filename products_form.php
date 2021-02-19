@@ -34,10 +34,9 @@ session_start();
               <br/><br/>
               <input id="picture" name="picture" type="file" required>
         </div>
-        <div class="user-box">
-              <label for="name" class="floatLabel">ชื่อสินค้า</label>
-              <br/><br/>
+        <div class="user-box">       
               <input id="name" name="name" type="text" required>
+              <label for="name" class="floatLabel">ชื่อสินค้า</label>
               </div>
           <div class="user-box">
               <label for="description" class="floatLabel">คำอธิบายสินค้า</label>
