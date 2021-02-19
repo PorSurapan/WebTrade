@@ -19,7 +19,8 @@ if (move_uploaded_file($tempname, $folder))  {
 }else{ 
 	$msg = "Failed to upload image"; 
 }
-		 	
+		 
+
 	$result = mysqli_query($con, $sql);
 	if(!$result){
 			die('Error query: ' . mysqli_error());

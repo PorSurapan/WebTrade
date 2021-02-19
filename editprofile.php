@@ -32,7 +32,6 @@
 		$_SESSION["s_username"] = $_POST["username"];
 			header("Location: profile.php");
 	} 
-
 	mysqli_close($con);
 ?>
 
