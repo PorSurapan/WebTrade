@@ -26,7 +26,7 @@ session_start();
               <label for="description" class="floatLabel">คำอธิบายสินค้า</label>
               <textarea rows="4" cols="50" id="description" name="description">
                 </textarea>
-              
+          
           </p>
           <p>
             <label for="category" class="floatLabel">ประเภทสินค้า</label>
@@ -52,6 +52,7 @@ session_start();
                 <option value="อื่น ๆ">อื่น ๆ</option>
               </select>
           </p>
+          
           <p>
           <input type="hidden" id="owner" name="owner" value="<?php echo $_SESSION['s_id'];?>">
           </p>
