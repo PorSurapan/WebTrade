@@ -69,7 +69,6 @@
 					echo "<p><button onclick='edt(" . $row['id'] . ")'>จัดการ</button></p>";
 					echo "</div>";
 					echo "</td>";
-
 					$i++;
 				}
 			echo "</tr>";
