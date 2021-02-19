@@ -67,7 +67,7 @@ body{
     background:#2CC06B; 
   }
   
-  #btn2{
+  .btn2{
     float:left;
     background:#3498db;
     width:125px;  padding-top:5px;
@@ -83,7 +83,7 @@ body{
     font-size:0.8em;
   }
   
-  #btn2:hover{ 
+  .btn2:hover{ 
   background:#3594D2; 
   }
 

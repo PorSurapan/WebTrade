@@ -1,6 +1,6 @@
 <?php
     session_start();
-
+// sdf
     $username = $_POST["username"];
     $password = $_POST["password"];
     
@@ -29,7 +29,7 @@
                 if ($role == "admin")
 			        header("Location: main.php");
                 else
-                    header("Location: home.php");
+                    header("Location: profile.php");
         }
     }
 ?>
