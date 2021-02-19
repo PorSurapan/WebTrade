@@ -10,8 +10,7 @@ session_start();
     <link rel="stylesheet" href = "register_css.css">
     <title>ลงสินค้า</title>
 </head>
-<body>
-    
+<body> 
 <form action="products.php" method="post" enctype="multipart/form-data">
     <h2>สินค้าที่ต้องการเทรด</h2>
           <p>

@@ -37,7 +37,7 @@
               <input id="password" name="password" type="password" required>
               
           </p>
-           <p>
+           <p> 
               <label for="confirm_password" class="floatLabel">ยืนยันรหัสผ่าน</label>
               <input id="confirm_password" name="confirm_password" type="password" required>
               

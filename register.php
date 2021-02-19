@@ -16,5 +16,5 @@
 			header("Location: login.html");
 			
 	} 
-	mysqli_close($con);
+	mysqli_close($con); 
 ?>
