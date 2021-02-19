@@ -1,6 +1,7 @@
 <?php
 session_start();
 	if(isset($_SESSION['logged']) && $_SESSION['s_id'] == true)
+    include("header_sender.html");
 ?>
 <html>
 <head>
@@ -11,7 +12,7 @@ session_start();
 </head>
 <body>
     
-<form action="products.php" method="post">
+<form action="products.php" method="post" enctype="multipart/form-data">
     <h2>สินค้าที่ต้องการเทรด</h2>
           <p>
               <label for="picture" class="floatLabel">รูปภาพสินค้า</label>

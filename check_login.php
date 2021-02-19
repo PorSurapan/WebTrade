@@ -29,7 +29,7 @@
                 if ($role == "admin")
 			        header("Location: main.php");
                 else
-                    header("Location: products_form.php");
+                    header("Location: home.php");
         }
     }
 ?>
