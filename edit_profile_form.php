@@ -84,7 +84,7 @@ session_start();
     <input id="tel" name="tel" type="text" value=<?php echo $result['tel'] ?> required>
       <label>เบอร์โทรศัพท์</label>
     </div>
-    <div>
+    <div class="user-box">
             <select id="role" name="role" required>
             
                 <option value="sender" <?php if($result['roles']=="sender") echo "selected" ?>>sender</option>

@@ -16,7 +16,7 @@
 </script>
     <meta charset="UTF-8">
     <meta name='viweport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
-    <link rel="stylesheet" href = "products_css.css">
+    <link rel="stylesheet" href = "form_css.css">
     <title>สมัครสมาชิก</title>
 <style>
     .button {
