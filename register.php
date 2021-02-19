@@ -13,7 +13,7 @@
 	if(!$result){
 			die('Error query: ' . mysqli_error());
 	}else{
-			header("Location: login.php");
+			header("Location: login.html");
 			
 	} 
 	mysqli_close($con);
