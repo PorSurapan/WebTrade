@@ -18,6 +18,8 @@
             $role = $row['roles'];
             $username = $row['username'];
             $id = $row['id'];
+            
+
 
             $_SESSION['logged'] = true;
             $_SESSION["s_id"] = $id;
@@ -28,8 +30,10 @@
 
                 if ($role == "admin")
 			        header("Location: main.php");
+                else if ($role == "sender")
+                    header("Location: home_sender.php");
                 else
-                    header("Location: home.php");
+                header("Location: home_receiver.php");
         }
     }
 ?>
