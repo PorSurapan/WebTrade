@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['logged']) && $_SESSION['s_username'] == true)
-include("config.php");
+include("config_header.php");
 ?>
 
 <style>
