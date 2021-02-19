@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="edit_form.css">
 </head>
 
-<body>
+<body id="demo">
     <?php
         $id = $_GET['id'];
         // echo $id;
@@ -22,19 +22,40 @@
         $conn = new mysqli("localhost", "root", "", "trader");
         $sql = "SELECT * FROM products WHERE id = $id";
         // echo $sql; //print out for debugging
+        $rs=$conn->query($sql);
 
-        if ($conn->query($sql))
+        if ($rs)
         {
-            
+            while($row = $rs->fetch_assoc())
+            {
+                $pid = $id;
+                $own = $row['owner'];
+                $name = $row['name'];
+                $des = $row['description'];
+                $cate = $row['category'];
+                $pic = $row['picture'];
+                $status = $row['status'];
+                $hide = $row['hide'];
+
+                // echo $pid;
+                // echo $own;
+                // echo $name;
+                // echo $des;
+                // echo $cate;
+                // echo $pic;
+                // echo $status;
+                 // echo $hide;
+            }
         }
         else
         {
             echo "Execution Error!";
         }
-        $conn->close();
+
+        $conn->close(); 
     ?>
 
-        <form action="save_product.php">
+        <form action="product_update.php" method="post" enctype = "multipart/form-data">
             <table align="center">
                 <tr>
                     <td width="50%">
@@ -42,16 +63,17 @@
                         <table align="center">
                             <tr>
                                 <td> <label for="pname">ชื่อสินค้า</label> </td>
-                                <td> <input type="text" id="pname" name="productname" placeholder="ชื่อสินค้า"> </td>
+                                <td> <input type="text" id="pname" name="productName" placeholder="ชื่อสินค้า" value="<?php echo $name; ?>" required> </td>
                             </tr>
                             <tr>
                                 <td> <label for="describe">คำอธิบาย</label> </td>
-                                <td> <textarea id="describe" name="description" placeholder="รายละเอียดสินค้า" style="height:100px"></textarea> </td>
+                                <td> <input type="text" id="describe" name="description" placeholder="รายละเอียดสินค้า" value="<?php echo $des; ?>" required> </td>
                             </tr>
                             <tr>
                                 <td> <label for="category">หมวดหมู่</label> </td>
                                 <td> 
                                     <select id="category" name="category">
+                                        <option value="<?php echo $cate; ?>" selected hidden ><?php echo $cate; ?></option>
                                         <option value="ผลิตภัณฑ์สุขภาพ">ผลิตภัณฑ์สุขภาพ</option>
                                         <option value="นาฬิกาและแว่นตา">นาฬิกาและแว่นตา</option>
                                         <option value="รองเท้า">รองเท้า</option>
@@ -74,9 +96,10 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td> <label for="status">หมวดหมู่</label> </td>
+                                <td> <label for="status">สถานะ</label> </td>
                                 <td>
                                     <select id="status" name="status">
+                                        <option value="<?php echo $status; ?>" selected hidden ><?php echo $status; ?></option>
                                         <option value="รอเทรด">รอเทรด</option>
                                         <option value="เทรดแล้ว">เทรดแล้ว</option>
                                     </select>
@@ -84,7 +107,18 @@
                             </tr>
                             <tr>
                                 <td> <br /><label for="pimage">รูปสินค้า</label> </td>
-                                <td> <br /><input type="file" id="pimage" name="productimage" onchange="preview()"> </td>
+                                <td> <br /><input type="file" id="pimage" name="productImage" onchange="preview()"><br /><br /> </td>
+                            </tr>
+                            <tr>
+                                <td> <br /><label for="hide">แสดงสินค้า</label> </td>
+                                <td>
+                                    <br /><p id="visual" onload="loadImage()"></p>
+                                    <script type="text/javascript">
+                                        function loadImage() {
+                                            alert("Image is loaded");
+                                        }
+                                    </script>
+                                </td>
                             </tr>
                         </table>
 
@@ -100,7 +134,7 @@
                                 </script>
 
                                 <td></td>
-                                <td> <img id="frame" src="" height="300px"/> </td>
+                                <td> <img id="frame" src="resource/<?php echo $pic; ?>" height="350px"/> </td>
                             </tr>
                         </table>
 
@@ -110,19 +144,14 @@
             <table align="center">
                 <tr align="center">
                     <td>
-                        <br />
-                        <input type="checkbox" id="hide" name="hide" value="0">
-                        <label for="hide">ซ่อนสินค้า</label>
-                    </td>
-                </tr>
-                <tr align="center">
-                    <td>
                         <br /><br />
                         <input type="submit" value="บันทึก">
+                        <input type="hidden" name="pID" value="<?php echo $id; ?>">
+                        <input type="hidden" name="pOwn" value="<?php echo $own; ?>">
+                        <input type="hidden" name="hide" value="<?php echo $hide; ?>">
                     </td>
                 </tr>
             </table>
-
         </form>
 
 </body>
