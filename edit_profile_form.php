@@ -1,7 +1,9 @@
 <?php
 session_start();
 	if(isset($_SESSION['logged']) && $_SESSION['s_username'] == true)
+    include("header_sender.html");
 ?>
+
 <html>
 <head>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -43,8 +45,9 @@ session_start();
 
 	<?php while($result = mysqli_fetch_array($row)){ ?>
 
-<form action="editprofile.php" method="post">
+<form action="editprofile.php" method="post" enctype="multipart/form-data">
     <h2>แก้ไขข้อมูลส่วนตัว</h2>
+
           <p>
               <label for="photo" class="floatLabel">อัพโหลด</label>
               <br/><br/>
