@@ -95,4 +95,10 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
   }
+
+  @mixin object-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   

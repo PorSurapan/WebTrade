@@ -43,8 +43,9 @@ session_start();
 
 	<?php while($result = mysqli_fetch_array($row)){ ?>
 
-<form action="editprofile.php" method="post">
+<form action="editprofile.php" method="post" enctype="multipart/form-data">
     <h2>แก้ไขข้อมูลส่วนตัว</h2>
+
           <p>
               <label for="photo" class="floatLabel">อัพโหลด</label>
               <br/><br/>
