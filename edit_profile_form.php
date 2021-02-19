@@ -6,7 +6,6 @@ session_start();
 
 <style>
 .button {
-  background-color: #4CAF50; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
