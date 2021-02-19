@@ -4,12 +4,24 @@ session_start();
 	include("header_sender.html");
 ?>
 
-
 <html>
 <head>
     <title>ข้อมูลส่วนตัว</title>
+
+	<script type = "text/javascript">
+	function ConfirmDelete()
+	{
+ 		var del = confirm("คุณแน่ใจว่าจะลบใช่หรือไม่?");
+ 			if (del == true)
+				return true;
+			else
+				return false;
+	}
+</script>
+
+	<link rel="stylesheet" href="show_product.css">
 </head>
-<!-- test -->
+
 <body>
     
 	<?php
@@ -90,7 +102,46 @@ session_start();
 				</td>
 			</tr><?php } ?>
 		</td><br/>
+	</table>
 	</center>
-	
+
+	<br/><br/>
+		<center><h2><u>สินค้าที่คุณลงเทรด</u></h2></center>
+	 
+	<?php
+        $conn = mysqli_connect("localhost", "root", "", "trader");
+        $conn->query("SET NAMES UTF8");
+        $sql = "SELECT * FROM products WHERE owner = " . " '" . $_SESSION['s_id'] . "' ";
+        $rs = $conn->query($sql);
+		$i = 0;
+
+		echo "<table align='center'>";
+        	echo "<tr>";
+				while($row = $rs->fetch_assoc()) {
+					if ($i % 5 == 0) {
+						echo "</tr>";
+						echo "<tr>";
+					}
+					$name = $row['name'];
+					echo "<td>";
+					echo "<div class='card'>";
+					echo "<img class='centered-and-cropped' src='resource/" . $row['picture'] . "'" . "width='200' height='200'>";
+					echo "<h2>" . $row['name'] . "</h2>";
+					echo "<p>" . $row['category'] . "</p>";
+					echo "<p class='price'>" . $row['status'] . "</p>";
+					echo '<button><a href="delete_products.php?id=' . $row['id'] . '" onclick = "return ConfirmDelete()" >ลบสินค้าเทรด</a></td></button>';
+					echo "</div>";
+					echo "</td>";
+
+					$i++;
+				}
+			echo "</tr>";
+		echo "</table>";
+
+        $conn->close();
+	?>
+
+	<br/><br/>
+
 </body>
 </html>
