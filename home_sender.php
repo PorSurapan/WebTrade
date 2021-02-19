@@ -2,7 +2,7 @@
 	session_start();
 
 	if (isset($_SESSION['logged']) && $_SESSION['logged'] == true)
-		include("header_admin.html");
+		include("header_sender.html");
 	else
 		//go to login
 ?>
@@ -62,14 +62,14 @@
 
 					echo "<td>";
 					echo "<div class='card'>";
-					// echo "<img src='resource/" . $row['picture'] . "'" . "style='width:100%'>";
 					echo "<img class='centered-and-cropped' src='resource/" . $row['picture'] . "'" . "width='200' height='200'>";
 					echo "<h2>" . $row['name'] . "</h2>";
 					echo "<p>" . $row['category'] . "</p>";
 					echo "<p class='price'>" . $row['status'] . "</p>";
-					echo "<p><button onclick='edt(" . $row['id'] . ")'>จัดการ</button></p>";
+					echo "<p><button onclick='edt(" . $row['id'] . ")'>แลกเปลี่ยน</button></p>";
 					echo "</div>";
 					echo "</td>";
+
 					$i++;
 				}
 			echo "</tr>";

@@ -32,3 +32,7 @@ html, body {
 .card button:hover {
     opacity: 0.7;
 }
+
+.centered-and-cropped { 
+    object-fit: cover;
+}
