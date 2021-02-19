@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name='viweport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
-    <link rel="stylesheet" href = "products_css.css">
+    <link rel="stylesheet" href = "form_css.css">
     <title>ลงสินค้า</title>
 <style>
     .button {
@@ -34,10 +34,9 @@ session_start();
               <br/><br/>
               <input id="picture" name="picture" type="file" required>
         </div>
-        <div class="user-box">
-              <label for="name" class="floatLabel">ชื่อสินค้า</label>
-              <br/><br/>
+        <div class="user-box">       
               <input id="name" name="name" type="text" required>
+              <label for="name" class="floatLabel">ชื่อสินค้า</label>
               </div>
           <div class="user-box">
               <label for="description" class="floatLabel">คำอธิบายสินค้า</label>
