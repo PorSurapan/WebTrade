@@ -17,8 +17,10 @@
         while($row = $rs->fetch_assoc()) {
             $role = $row['roles'];
             $username = $row['username'];
+            $id = $row['id'];
 
             $_SESSION['logged'] = true;
+            $_SESSION["s_id"] = $id;
 			$_SESSION["s_username"] = $username;
             $_SESSION["s_role"] = $role;
 
