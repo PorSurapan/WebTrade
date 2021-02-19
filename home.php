@@ -62,7 +62,7 @@
 
 					echo "<td>";
 					echo "<div class='card'>";
-					echo "<img src='resource/" . $row['picture'] . "'" . "style='width:100%; height:120px;'>";
+					echo "<img src='resource/" . $row['picture'] . "'" . "style='width:100%;height:120px;'>";
 					echo "<h2>" . $row['name'] . "</h2>";
 					echo "<p>" . $row['category'] . "</p>";
 					echo "<p class='price'>" . $row['status'] . "</p>";
