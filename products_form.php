@@ -11,7 +11,7 @@ session_start();
     <title>ลงสินค้า</title>
 </head>
 <body>
-    
+    <!-- test -->
 <form action="products.php" method="post" enctype="multipart/form-data">
     <h2>สินค้าที่ต้องการเทรด</h2>
           <p>
