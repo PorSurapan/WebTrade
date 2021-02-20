@@ -47,25 +47,21 @@
         </div>
 
         <div class="user-box">
-            
               <input id="username" name="username" type="text" required>
               <label for="username" class="floatLabel">ชื่อผู้ใช้</label>
         </div>
 
         <div class="user-box">
-            
               <input id="password" name="password" type="password" required>
               <label for="password" class="floatLabel">รหัสผ่าน</label>
         </div>
 
         <div class="user-box"> 
-            
               <input id="confirm_password" name="confirm_password" type="password" required>
               <label for="confirm_password" class="floatLabel">ยืนยันรหัสผ่าน</label>
         </div>    
 
         <div class="user-box">
-            
             <input id="tel" name="tel" type="text" required>
             <label for="tel" class="floatLabel">เบอร์โทรศัพท์</label>
         </div>
