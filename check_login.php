@@ -1,6 +1,12 @@
 <?php
     session_start();
-// sdf
+
+	if (isset($_SESSION['logged']) && $_SESSION['logged'] == true)
+		include("header_admin.html");
+	else
+        header("Location: login.html");
+
+    
     $username = $_POST["username"];
     $password = $_POST["password"];
     
@@ -33,7 +39,7 @@
                 else if ($role == "sender")
                     header("Location: home_sender.php");
                 else
-                header("Location: home_receiver.php");
+                    header("Location: home_receiver.php");
         }
     }
 ?>

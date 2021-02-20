@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    
     $id = $_POST['pID'];
     $owner = $_POST['pOwn'];
     $name = $_POST['productName'];

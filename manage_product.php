@@ -4,7 +4,7 @@
 	if (isset($_SESSION['logged']) && $_SESSION['logged'] == true)
 		include("header_admin.html");
 	else
-		//go to login
+        header("Location: login.html");
 ?>
 
 <html>
