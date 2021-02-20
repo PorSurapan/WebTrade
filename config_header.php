@@ -1,5 +1,5 @@
 
-<?php
+<?php 
     
     $conn=mysqli_connect("localhost", "root", "","trader");
     $conn->query("SET NAMES UTF8");
