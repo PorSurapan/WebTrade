@@ -8,15 +8,6 @@
     $status = $_POST['status'];
     $hide = $_POST['hide'];
 
-    // echo $id;
-    // echo $owner;
-    // echo $name;
-    // echo $describe;
-    // echo $cate;
-    // echo $pic;
-    // echo $status;
-     echo $hide;
-
     if ($pic != null || $pic != "")
     {
         $conn=new mysqli("localhost", "root", "", "trader");
@@ -32,14 +23,15 @@
 
         if ($conn->query($sql))
         {
-            echo "Update Successfully!";
-            echo "<br /><a href='main.php'>Go to Home</a>";
-
             if (file_exists("resource/" . $_FILES["productImage"]["name"])){
                 echo $_FILES["productImage"]["name"] . " Already exists. <br />";
             } else {
                 move_uploaded_file($_FILES["productImage"]["tmp_name"], "resource/" . $_FILES["productImage"]["name"]);
             }
+
+            echo '<script type="text/javascript">';
+            echo 'if(!alert("อัพเดตข้อมูลแล้ว!")) document.location = "main.php";';
+            echo '</script>';
         }
         else
         {
@@ -61,8 +53,9 @@
 
         if ($conn->query($sql))
         {
-            echo "Update Successfully!";
-            echo "<br /><a href='main.php'>Go to Home</a>";
+            echo '<script type="text/javascript">';
+            echo 'if(!alert("อัพเดตข้อมูลแล้ว!")) document.location = "main.php";';
+            echo '</script>';
         }
         else
         {

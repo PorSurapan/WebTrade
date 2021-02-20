@@ -12,9 +12,23 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Trade - จัดการสินค้า</title>
     <link rel="stylesheet" href="edit_form.css">
+
+    <script type="text/javascript">
+        function switchImg(num) {
+            if (num == 0) {
+                str = "<img src='resource/sh_green.png' height='40' onclick='switchImg(1)'>";
+                document.getElementById("visual").innerHTML = str;
+                document.getElementById("hide").value = "1";
+            } else {
+                str = "<img src='resource/sh_red.png' height='40' onclick='switchImg(0)'>";
+                document.getElementById("visual").innerHTML = str;
+                document.getElementById("hide").value = "0";
+            }
+        }
+    </script>
 </head>
 
-<body id="demo">
+<body onload="getImg();">
     <?php
         $id = $_GET['id'];
         // echo $id;
@@ -37,14 +51,6 @@
                 $status = $row['status'];
                 $hide = $row['hide'];
 
-                // echo $pid;
-                // echo $own;
-                // echo $name;
-                // echo $des;
-                // echo $cate;
-                // echo $pic;
-                // echo $status;
-                 // echo $hide;
             }
         }
         else
@@ -107,17 +113,18 @@
                             </tr>
                             <tr>
                                 <td> <br /><label for="pimage">รูปสินค้า</label> </td>
-                                <td> <br /><input type="file" id="pimage" name="productImage" onchange="preview()"><br /><br /> </td>
+                                <td> <br /><br /><input type="file" id="pimage" name="productImage" onchange="preview()"><br /><br /> </td>
                             </tr>
                             <tr>
-                                <td> <br /><label for="hide">แสดงสินค้า</label> </td>
+                                <td> <br /><label for="hide">การมองเห็น</label> </td>
                                 <td>
-                                    <br /><p id="visual" onload="loadImage()"></p>
-                                    <script type="text/javascript">
-                                        function loadImage() {
-                                            alert("Image is loaded");
-                                        }
-                                    </script>
+                                    <br />
+                                    <?php if ($hide == 0) { ?>
+                                        <p id="visual"><img src='resource/sh_red.png' height='40' onclick='switchImg(0)'></p>
+                                    <?php } else { ?>
+                                        <p id="visual"><img src='resource/sh_green.png' height='40' onclick='switchImg(1)'></p>
+                                    <?php } ?>
+                                    <input type="hidden" id="hide" name="hide" value="<?php echo $hide; ?>" required>
                                 </td>
                             </tr>
                         </table>
@@ -148,7 +155,6 @@
                         <input type="submit" value="บันทึก">
                         <input type="hidden" name="pID" value="<?php echo $id; ?>">
                         <input type="hidden" name="pOwn" value="<?php echo $own; ?>">
-                        <input type="hidden" name="hide" value="<?php echo $hide; ?>">
                     </td>
                 </tr>
             </table>
