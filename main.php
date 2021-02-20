@@ -20,67 +20,135 @@
         }
     </script>
 </head>
+
 <body>
-	<table align="center" width="90%">
-		<tr>
-			<td>
-				ค้นหา
-				<input type="text" name="search" id="search" placeholder="กรอกชื่อสินค้า" />
-			</td>
-			<td>
-				หมวดหมู่ 
-				<select name="category" id="category">
-					<option value="ผลิตภัณฑ์สุขภาพ">ทุกประเภท</option>
-					<option value="ผลิตภัณฑ์สุขภาพ">ผลิตภัณฑ์สุขภาพ</option>
-					<option value="นาฬิกาและแว่นตา">นาฬิกาและแว่นตา</option>
-					<option value="รองเท้า">รองเท้า</option>
-					<option value="คอมพิวเตอร์และแล็ปท็อป">คอมพิวเตอร์และแล็ปท็อป</option>
-					<option value="กล้องและอุปกรณ์ถ่ายภาพ">กล้องและอุปกรณ์ถ่ายภาพ</option>
-					<option value="กีฬาและกิจกรรมกลางแจ้ง">กีฬาและกิจกรรมกลางแจ้ง</option>
-					<option value="สื่อบันเทิงภายใน">สื่อบันเทิงภายใน</option>
-					<option value="เกมและฮ๊อบบี้">เกมและฮ๊อบบี้</option>
-					<option value="ยานยนต์">ยานยนต์</option>
-					<option value="ของเล่น">ของเล่น</option>
-					<option value="เครื่องใช้ในบ้าน">เครื่องใช้ในบ้าน</option>
-					<option value="กระเป๋า">กระเป๋า</option>
-					<option value="เครื่องใช้ในบ้าน">เครื่องใช้ในบ้าน</option>
-					<option value="เครื่องประดับ">เครื่องประดับ</option>
-					<option value="เครื่องใช้ไฟฟ้าภายในบ้าน">เครื่องใช้ไฟฟ้าภายในบ้าน</option>
-					<option value="สัตว์เลี้ยง">สัตว์เลี้ยง</option>
-					<option value="เครื่องเขียน หนังสือ และดนตรี">เครื่องเขียน หนังสือ และดนตรี</option>
-					<option value="อื่น ๆ">อื่น ๆ</option>
-				</select>
-			</td>
-			<td>
-				สถานะ 
-				<select name="status" id="status">
-					<option value="ทุกสถานะ">ทุกสถานะ</option>
-					<option value="รอเทรด">รอเทรด</option>
-					<option value="เทรดแล้ว">เทรดแล้ว</option>
-				</select>
-			</td>
-			<td>
-				เรียงจาก
-				<select name="sort" id="sort">
-					<option value="ใหม่สุดก่อน">ใหม่สุดก่อน</option>
-					<option value="เก่าสุดก่อน">เก่าสุดก่อน</option>
-				</select>
-			</td>
-			<td>
-				การมองเห็น
-				<select name="show" id="show">
-					<option value="แสดงทั้งหมด">แสดงทั้งหมด</option>
-					<option value="ที่แสดงอยู่">ที่แสดงอยู่</option>
-					<option value="ที่ถูกซ่อน">ที่ถูกซ่อน</option>
-				</select>
-			</td>
-		</tr>
-	</table>
+	<?php
+		if(isset($_POST["category"])) {
+			$cate = $_POST['category'];
+		} else {
+			$cate = "ทุกประเภท";
+		}
+
+		if(isset($_POST["status"])) {
+			$sta = $_POST['status'];
+		} else {
+			$sta = "ทุกสถานะ";
+		}
+
+		if(isset($_POST["show"])) {
+			$show = $_POST['show'];
+		} else {
+			$show = "แสดงทั้งหมด";
+		}
+
+		if(isset($_POST["sort"])) {
+			$sort = $_POST['sort'];
+		} else {
+			$sort = "ใหม่สุดก่อน";
+		}
+	?>
+
+	<form name="form" action="main.php" method="post">
+		<table align="center" width="90%">
+			<tr>
+				<td>
+					ค้นหา 
+					<input type="text" name="search" id="search" placeholder="กรอกชื่อสินค้า" />
+				</td>
+				<td>
+					หมวดหมู่ 
+					<select name="category" id="category" onchange="this.form.submit()">
+						<option value="<?php echo $cate ?>" selected hidden><?php echo $cate ?></option>
+						<option value="ทุกประเภท">ทุกประเภท</option>
+						<option value="ผลิตภัณฑ์สุขภาพ">ผลิตภัณฑ์สุขภาพ</option>
+						<option value="นาฬิกาและแว่นตา">นาฬิกาและแว่นตา</option>
+						<option value="รองเท้า">รองเท้า</option>
+						<option value="คอมพิวเตอร์และแล็ปท็อป">คอมพิวเตอร์และแล็ปท็อป</option>
+						<option value="กล้องและอุปกรณ์ถ่ายภาพ">กล้องและอุปกรณ์ถ่ายภาพ</option>
+						<option value="กีฬาและกิจกรรมกลางแจ้ง">กีฬาและกิจกรรมกลางแจ้ง</option>
+						<option value="สื่อบันเทิงภายใน">สื่อบันเทิงภายใน</option>
+						<option value="เกมและฮ๊อบบี้">เกมและฮ๊อบบี้</option>
+						<option value="ยานยนต์">ยานยนต์</option>
+						<option value="ของเล่น">ของเล่น</option>
+						<option value="เครื่องใช้ในบ้าน">เครื่องใช้ในบ้าน</option>
+						<option value="กระเป๋า">กระเป๋า</option>
+						<option value="เครื่องใช้ในบ้าน">เครื่องใช้ในบ้าน</option>
+						<option value="เครื่องประดับ">เครื่องประดับ</option>
+						<option value="เครื่องใช้ไฟฟ้าภายในบ้าน">เครื่องใช้ไฟฟ้าภายในบ้าน</option>
+						<option value="สัตว์เลี้ยง">สัตว์เลี้ยง</option>
+						<option value="เครื่องเขียน หนังสือ และดนตรี">เครื่องเขียน หนังสือ และดนตรี</option>
+						<option value="อื่น ๆ">อื่น ๆ</option>
+					</select>
+				</td>
+				<td>
+					สถานะ 
+					<select name="status" id="status" onchange="this.form.submit()">
+						<option value="<?php echo $sta ?>" selected hidden><?php echo $sta ?></option>
+						<option value="ทุกสถานะ">ทุกสถานะ</option>
+						<option value="รอเทรด">รอเทรด</option>
+						<option value="เทรดแล้ว">เทรดแล้ว</option>
+					</select>
+				</td>
+				<td>
+					การมองเห็น 
+					<select name="show" id="show" onchange="this.form.submit()">
+						<option value="<?php echo $show ?>" selected hidden><?php echo $show ?></option>
+						<option value="แสดงทั้งหมด">แสดงทั้งหมด</option>
+						<option value="แสดงอยู่">แสดงอยู่</option>
+						<option value="ถูกซ่อน">ถูกซ่อน</option>
+					</select>
+				</td>
+				<td>
+					เรียงจาก 
+					<select name="sort" id="sort" onchange="this.form.submit()">
+						<option value="<?php echo $sort ?>" selected hidden><?php echo $sort ?></option>
+						<option value="ใหม่สุดก่อน">ใหม่สุดก่อน</option>
+						<option value="เก่าสุดก่อน">เก่าสุดก่อน</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+	</form>
 
 	<?php
         $conn = mysqli_connect("localhost", "root", "", "trader");
         $conn->query("SET NAMES UTF8");
-        $sql = "SELECT * FROM products ORDER BY id DESC";
+		//  $sql = "SELECT * FROM products ORDER BY id DESC";
+
+		if ($cate == "ทุกประเภท" && $sta == "ทุกสถานะ" && $show == "แสดงทั้งหมด" && $sort == "ใหม่สุดก่อน")
+			$sql = "SELECT * FROM products ORDER BY id DESC";
+		else if ($cate == "ทุกประเภท" && $sta == "ทุกสถานะ" && $show == "แสดงทั้งหมด" && $sort != "ใหม่สุดก่อน")
+			$sql = "SELECT * FROM products ORDER BY id ASC";
+		else if ($cate == "ทุกประเภท" && $sta == "ทุกสถานะ" && $show != "แสดงทั้งหมด" && $sort != "ใหม่สุดก่อน")
+			$sql = "SELECT * FROM products WHERE hide = '" . $show . "' ORDER BY id ASC";
+		else if ($cate == "ทุกประเภท" && $sta != "ทุกสถานะ" && $show != "แสดงทั้งหมด" && $sort != "ใหม่สุดก่อน" )
+			$sql = "SELECT * FROM products WHERE status = '" . $sta . "' AND hide = '" . $show . "' ORDER BY id ASC";
+		else if ($cate == "ทุกประเภท" && $sta == "ทุกสถานะ" && $show != "แสดงทั้งหมด" && $sort == "ใหม่สุดก่อน" )
+			$sql = "SELECT * FROM products WHERE hide = '" . $show . "' ORDER BY id DESC";
+		else if ($cate == "ทุกประเภท" && $sta != "ทุกสถานะ" && $show == "แสดงทั้งหมด" && $sort == "ใหม่สุดก่อน" )
+			$sql = "SELECT * FROM products WHERE status = '" . $sta . "' ORDER BY id DESC";
+		else if ($cate == "ทุกประเภท" && $sta != "ทุกสถานะ" && $show != "แสดงทั้งหมด" && $sort == "ใหม่สุดก่อน" )
+			$sql = "SELECT * FROM products WHERE status = '" . $sta . "' AND hide = '" . $show . "' ORDER BY id DESC";
+		else if ($cate == "ทุกประเภท" && $sta != "ทุกสถานะ" && $show == "แสดงทั้งหมด" && $sort != "ใหม่สุดก่อน" )
+			$sql = "SELECT * FROM products WHERE status = '" . $sta . "' ORDER BY id ASC";
+		else if ($cate != "ทุกประเภท" && $sta != "ทุกสถานะ" && $show != "แสดงทั้งหมด" && $sort != "ใหม่สุดก่อน" )
+			$sql = "SELECT * FROM products WHERE category = '" . $cate . "' AND status = '" . $sta . "' AND hide = '" . $show . "' ORDER BY id ASC";
+		else if ($cate != "ทุกประเภท" && $sta != "ทุกสถานะ" && $show != "แสดงทั้งหมด" && $sort == "ใหม่สุดก่อน")
+			$sql = "SELECT * FROM products WHERE category = '" . $cate . "' AND status = '" . $sta . "' AND hide = '" . $show . "' ORDER BY id DESC";
+		else if ($cate != "ทุกประเภท" && $sta != "ทุกสถานะ" && $sort == "ใหม่สุดก่อน" && $show == "แสดงทั้งหมด")
+			$sql = "SELECT * FROM products WHERE category = '" . $cate . "' AND status = '" . $sta . "' ORDER BY id DESC";
+		else if ($cate != "ทุกประเภท" && $sta == "ทุกสถานะ" && $sort == "ใหม่สุดก่อน" && $show == "แสดงทั้งหมด")
+			$sql = "SELECT * FROM products WHERE category = '" . $cate . "' ORDER BY id DESC";
+		else if ($cate != "ทุกประเภท" && $sta != "ทุกสถานะ" && $show == "แสดงทั้งหมด" && $sort != "ใหม่สุดก่อน" )
+			$sql = "SELECT * FROM products WHERE category = '" . $cate . "' AND status = '" . $sta . "' ORDER BY id ASC";
+		else if ($cate != "ทุกประเภท" && $sta == "ทุกสถานะ" && $show != "แสดงทั้งหมด" && $sort != "ใหม่สุดก่อน")
+			$sql = "SELECT * FROM products WHERE category = '" . $cate . "' AND hide = '" . $show . "' ORDER BY id ASC";
+		else if ($cate != "ทุกประเภท" && $sta == "ทุกสถานะ" && $show == "แสดงทั้งหมด" && $sort != "ใหม่สุดก่อน")
+			$sql = "SELECT * FROM products WHERE category = '" . $cate . "' ORDER BY id ASC";
+		else
+			$sql = "SELECT * FROM products WHERE category = '" . $cate . "' AND hide = '" . $show . "' ORDER BY id DESC";
+
+		//echo $sql;
         $rs = $conn->query($sql);
 		$i = 0;
 
