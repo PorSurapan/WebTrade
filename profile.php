@@ -10,6 +10,19 @@ session_start();
     <title>ข้อมูลส่วนตัว</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<script type = "text/javascript">
+
+function ConfirmDelete()
+{
+ var del = confirm("คุณแน่ใจว่าจะลบสินค้าชิ้นนี้ใช่หรือไม่?");
+ if (del == true)
+	return true;
+	else
+	return false;
+}
+
+</script>
+
 <style>
 
 .card2 {
