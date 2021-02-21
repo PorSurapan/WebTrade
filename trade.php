@@ -15,7 +15,7 @@
     if($con->query($sql))
     {
         echo '<script type="text/javascript">';
-        echo 'if(!alert("อัพเดตข้อมูลแล้ว!")) document.location = "home.php";';
+        echo 'if(!alert("เทรดสินค้าแล้ว!")) document.location = "home.php";';
         echo '</script>';
     }
     else
