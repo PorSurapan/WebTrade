@@ -48,7 +48,7 @@
 	<?php
         $conn = mysqli_connect("localhost", "root", "", "trader");
         $conn->query("SET NAMES UTF8");
-        $sql = "SELECT * FROM products WHERE hide = 1";
+        $sql = "SELECT * FROM products WHERE hide = 'แสดงอยู่'";
         $rs = $conn->query($sql);
 		$i = 0;
 
