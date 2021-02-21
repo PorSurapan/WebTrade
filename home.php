@@ -16,7 +16,7 @@
 	<script type="text/javascript">
         function edt(ind)
         {
-            window.location.href = "manage_product.php?id=" + ind;
+            window.location.href = "trade_product.php?id=" + ind;
         }
     </script>
 </head>
