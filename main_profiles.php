@@ -81,7 +81,7 @@
 					<option value="ปกติ">ปกติ</option>
                     <option value="ถูกระงับ">ถูกระงับ</option>
                     <option value="ปิดบัญชี">ปิดบัญชี</option>
-					<option value="ถูกแบนถาวร">ถูกแบน</option>
+					<option value="ถูกแบนถาวร">ถูกแบนถาวร</option>
                     
 				</select>
 			</td>
