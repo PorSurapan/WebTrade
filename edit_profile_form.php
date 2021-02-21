@@ -87,8 +87,8 @@ include("config_header.php");
     <div class="user-box">
             <select id="role" name="role" required>
             
-                <option value="sender" <?php if($result['roles']=="sender") echo "selected" ?>>sender</option>
-                <option value="receiver" <?php if($result['roles']=="receiver") echo "selected" ?>>receiver</option>
+                <option value="sender" <?php if($result['roles']=="sender") echo "selected" ?>>ผู้ลงเทรด</option>
+                <option value="receiver" <?php if($result['roles']=="receiver") echo "selected" ?>>ผู้ขอเทรด</option>
               </select>
       <?php } ?>
     </div>
