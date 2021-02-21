@@ -18,11 +18,11 @@
             if (num == 0) {
                 str = "<img src='resource/sh_green.png' height='40' onclick='switchImg(1)'>";
                 document.getElementById("visual").innerHTML = str;
-                document.getElementById("hide").value = "1";
+                document.getElementById("hide").value = "แสดงอยู่";
             } else {
                 str = "<img src='resource/sh_red.png' height='40' onclick='switchImg(0)'>";
                 document.getElementById("visual").innerHTML = str;
-                document.getElementById("hide").value = "0";
+                document.getElementById("hide").value = "ถูกซ่อน";
             }
         }
     </script>
