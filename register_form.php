@@ -71,8 +71,8 @@
             <br/><br/>
             <select id="role" name="role" required>
                 <option value="empty"></option>
-                <option value="sender">ผู้ลงเทรด</option>
-                <option value="receiver">ผู้ขอเทรด</option>
+                <option value="ผู้ลงเทรด">ผู้ลงเทรด</option>
+                <option value="ผู้ขอเทรด">ผู้ขอเทรด</option>
               </select>
         </div>
 
