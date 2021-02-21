@@ -36,10 +36,8 @@
 
                 if ($role == "admin")
 			        header("Location: main.php");
-                else if ($role == "sender")
-                    header("Location: home_sender.php");
                 else
-                    header("Location: home_receiver.php");
+                    header("Location: home.php");
         }
     }
 ?>

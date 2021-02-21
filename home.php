@@ -2,7 +2,7 @@
 	session_start();
 
 	if (isset($_SESSION['logged']) && $_SESSION['logged'] == true)
-		include("header_receiver.html");
+		include("config_header.php");
 	else
 		//go to login
 ?>
