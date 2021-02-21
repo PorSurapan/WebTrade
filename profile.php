@@ -8,23 +8,38 @@ session_start();
 <html>
 <head>
     <title>ข้อมูลส่วนตัว</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<script type = "text/javascript">
-	function ConfirmDelete()
-	{
- 		var del = confirm("คุณแน่ใจว่าจะลบใช่หรือไม่?");
- 			if (del == true)
-				return true;
-			else
-				return false;
-	}
-</script>
+<style>
 
-	<link rel="stylesheet" href="show_product.css">
+.card2 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  background: #141e30;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: blue;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 20px;
+}
+
+</style>
+
 </head>
 
-<body>
-    
+<body style="background-color:#243b55">
+
 	<?php
 	
 	$con = mysqli_connect("localhost", "root", "");
@@ -43,71 +58,36 @@ session_start();
 	<?php while($result = mysqli_fetch_array($row)){ ?>
 	
 	<center>	
-<br/>
 
- <?php
-		echo " <font color= 'black'><img src='./resource/" .$result['photo']. "' width='10%'/></font>";
+
+<font color="white"><u><h2 style="text-align:center">ข้อมูลส่วนตัว</h2></u></font>
+
+<div class="card2">
+<?php
+		echo " <font color= 'black'><img src='./resource/" .$result['photo']. "' width='100%'/></font>";
 	?>
-<br/><br/>
-	
-<input type="button" onclick="location.href='edit_profile_form.php';" value="Edit Profile" />
-<br/>
-		
-<table "width:80%" cellspacing="2" bgcolor = "#171616">
-	<tr>
-		<td width="180" align="left">
-			
-			<tr>
-					
-			<tr>
-				<td>
-					<font color="white"><b>Username:</b>
-				</td>
-				<td>
-					<?php
+
+  <h1><?php
 					echo  " <font color= 'white'>".$result['username'];
-					?>
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<font color="white"><b>Role:</b>
-				</td>
-				<td>
-					<?php
+					?></h1>
+
+  <p><?php
 					echo " <font color= 'white'>".$result['roles']."</font>";
-					?>
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<font color="white"><b>Tel.:</b>
-				</td>
-				<td>
-					<?php
+					?></p>
+
+  <p><?php
 					echo " <font color= 'white'>".$result['tel']."</font>";
-					?>
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<font color="white"><b>Status:</b>
-				</td>
-				<td>
-					<?php
-					echo " <font color= 'white'>".$result['status']."</font>";
-					?>
-				</td>
-			</tr><?php } ?>
-		</td><br/>
-	</table>
-	</center>
+					?></p>
+
+  <p><button onclick="location.href='edit_profile_form.php';">แก้ไขโปรไฟล์</button></p>
+</div>
+<?php } ?>
+
+</body>
+</html>
 
 	<br/><br/>
-		<center><h2><u>สินค้าที่คุณลงเทรด</u></h2></center>
+		<center><h2><u><font color="white">สินค้าที่คุณลงเทรด</font></u></h2></center>
 	 
 	<?php
         $conn = mysqli_connect("localhost", "root", "", "trader");
@@ -116,7 +96,7 @@ session_start();
         $rs = $conn->query($sql);
 		$i = 0;
 
-		echo "<table align='center'>";
+		echo "<table align='center' bgcolor = 'white'>";
         	echo "<tr>";
 				while($row = $rs->fetch_assoc()) {
 					if ($i % 5 == 0) {
@@ -126,10 +106,10 @@ session_start();
 					$name = $row['name'];
 					echo "<td>";
 					echo "<div class='card'>";
-					echo "<img class='centered-and-cropped' src='resource/" . $row['picture'] . "'" . "width='200' height='200'>";
-					echo "<h2>" . $row['name'] . "</h2>";
-					echo "<p>" . $row['category'] . "</p>";
-					echo "<p class='price'>" . $row['status'] . "</p>";
+					echo "<img class='centered-and-cropped' src='resource/" . $row['picture'] . "'" . "width='220' height='200'>";
+					echo "<h2><center>" . $row['name'] . "</center></h2>";
+					echo "<p><center>" . $row['category'] . "</center></p>";
+					echo "<p class='price'><center>" . $row['status'] . "</center></p>";
 					echo '<button><a href="delete_products.php?id=' . $row['id'] . '" onclick = "return ConfirmDelete()" >ลบสินค้าเทรด</a></td></button>';
 					echo "</div>";
 					echo "</td>";
