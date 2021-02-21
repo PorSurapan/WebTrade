@@ -7,7 +7,7 @@
     $conn->query("SET NAMES UTF8");
 
     if ($name != null)
-        $sql="SELECT name FROM products WHERE name LIKE '$name%'";
+        $sql="SELECT name FROM products WHERE name LIKE '%$name%'";
     else
         $sql="SELECT name FROM products WHERE id = 0";
 

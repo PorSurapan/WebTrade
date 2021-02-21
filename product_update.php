@@ -12,8 +12,8 @@
 
     if ($pic != null || $pic != "")
     {
-        $conn=new mysqli("localhost", "root", "", "trader");
-        $sql="UPDATE products SET name = '$name', 
+        $conn = new mysqli("localhost", "root", "", "trader");
+        $sql = "UPDATE products SET name = '$name', 
                                     description = '$describe', 
                                     category = '$cate', 
                                     picture = '$pic', 
@@ -43,8 +43,8 @@
     }
     else
     {
-        $conn=new mysqli("localhost", "root", "", "trader");
-        $sql="UPDATE products SET name = '$name', 
+        $conn = new mysqli("localhost", "root", "", "trader");
+        $sql = "UPDATE products SET name = '$name', 
                                     description = '$describe', 
                                     category = '$cate', 
                                     status = '$status', 
