@@ -9,7 +9,7 @@
         while($row = $rs->fetch_assoc()) {
             $role = $row['roles'];
 
-            if ($role == "sender")
+            if ($role == "ผู้ลงเทรด")
             include("header_sender.html");
             else 
             include("header_receiver.html");

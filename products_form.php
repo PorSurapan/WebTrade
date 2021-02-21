@@ -81,7 +81,7 @@ session_start();
         </div>
 
         <div class="user-box">
-          <input type="hidden" id="hide" name="hide" value="1">
+          <input type="hidden" id="hide" name="hide" value="แสดงอยู่">
         </div>
 
         <center>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['logged']) && $_SESSION['s_username'] == true)
-include("config_header.php");
+include("header_admin.html");
 ?>
 
 <style>
@@ -64,7 +64,7 @@ include("config_header.php");
 
 <div class="login-box">
   <h2>แก้ไขข้อมูลส่วนตัว</h2>
-  <form action="editprofile.php" method="post" enctype="multipart/form-data">
+  <form action="profile_admin_change.php" method="post" enctype="multipart/form-data">
     <div class="user-box">
     <input id="photo" name="photo" type="file" required>
     </div>
@@ -85,11 +85,7 @@ include("config_header.php");
       <label>เบอร์โทรศัพท์</label>
     </div>
     <div class="user-box">
-            <select id="role" name="role" required>
-            
-                <option value="sender" <?php if($result['roles']=="sender") echo "selected" ?>>ผู้ลงเทรด</option>
-                <option value="receiver" <?php if($result['roles']=="receiver") echo "selected" ?>>ผู้ขอเทรด</option>
-              </select>
+    <input id="role" name="role" type="text" value=<?php echo $result['roles'] ?> readonly>
       <?php } ?>
     </div>
     <center>

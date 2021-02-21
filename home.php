@@ -16,7 +16,7 @@
 	<script type="text/javascript">
         function edt(ind)
         {
-            window.location.href = "manage_product.php?id=" + ind;
+            window.location.href = "trade_product.php?id=" + ind;
         }
     </script>
 </head>
@@ -48,7 +48,7 @@
 	<?php
         $conn = mysqli_connect("localhost", "root", "", "trader");
         $conn->query("SET NAMES UTF8");
-        $sql = "SELECT * FROM products WHERE hide = 1";
+        $sql = "SELECT * FROM products WHERE hide = 'แสดงอยู่'";
         $rs = $conn->query($sql);
 		$i = 0;
 
