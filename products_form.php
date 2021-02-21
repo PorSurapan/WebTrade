@@ -42,7 +42,7 @@ session_start();
 
         <div class="user-box">
               <label for="description" class="floatLabel">คำอธิบายสินค้า</label>
-              <br/><br/><br/>
+              <br/><br/>
               <textarea rows="4" cols="50" id="description" name="description">
                 </textarea>
         </div>

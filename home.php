@@ -2,7 +2,7 @@
 	session_start();
 
 	if (isset($_SESSION['logged']) && $_SESSION['logged'] == true)
-		include("header_sender.html");
+		include("config_header.php");
 	else
 		//go to login
 ?>
@@ -16,7 +16,7 @@
 	<script type="text/javascript">
         function edt(ind)
         {
-            window.location.href = "manage_product.php?id=" + ind;
+            window.location.href = "trade_product.php?id=" + ind;
         }
     </script>
 </head>
