@@ -2,12 +2,12 @@
     session_start();
 
     $own = $_POST['pOwn'];
-    $proid = $_POST['proID'];
+    $proID = $_POST['proID'];
     
 	$con = new mysqli("localhost", "root", "","trader");
 	
 	$sql = "INSERT INTO trade (sender,receiver)
-			VALUES('"  . $own . "', '" . $proid . "')";
+			VALUES('"  . $own . "', '" . $proID . "')";
 
         echo $sql;
     
