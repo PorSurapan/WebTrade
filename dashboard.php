@@ -25,7 +25,7 @@ if (move_uploaded_file($tempname, $folder))  {
 	if(!$result){
 			die('Error query: ' . mysqli_error());
 	}else{
-			header("Location: home.php");
+			header("Location: home_dashboard.php");
 			
 	} 
 	mysqli_close($con);
