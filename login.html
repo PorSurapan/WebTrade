@@ -10,7 +10,23 @@
           padding: 100px 0;
           text-align: center;
         }
-        </style>
+        
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button2 {background-color: #008CBA;} /* Blue */
+
+</style>
 
 </head>
 
@@ -30,8 +46,8 @@
                         <input type="password" name="password" id="password" class="password" placeholder="รหัสผ่าน" required/>
                         <br /><br />
                         <p id="failed" class="p"></p>
-                        <input type="submit" value="เข้าสู่ระบบ" class="btn" />
-                        <input type="submit" value="สมัครสมาชิก" class="btn2" onclick="location.href='register_form.php'"/>
+                        <input type="submit" value="เข้าสู่ระบบ" class="button" />
+                        <input type="submit" value="สมัครสมาชิก" class="button button2" onclick="location.href='register_form.php'"/>
                     </div>
                 </form>
             </td>
