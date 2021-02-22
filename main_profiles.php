@@ -123,7 +123,7 @@
 		}
 		else
 		{
-			$sql="SELECT * FROM profiles WHERE username LIKE '$search%'";
+			$sql="SELECT * FROM profiles WHERE username LIKE '%$search%'";
 		}
 
 		//echo $sql;

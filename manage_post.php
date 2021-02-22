@@ -28,7 +28,7 @@
     </script>
 </head>
 
-<body onload="getImg();">
+<body>
     <?php
         $id = $_GET['id'];
         // echo $id;

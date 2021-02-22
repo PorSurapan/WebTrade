@@ -95,7 +95,7 @@
 		}
 		else
 		{
-			$sql = "SELECT * FROM dashboard WHERE text LIKE '$search%'";
+			$sql = "SELECT * FROM dashboard WHERE text LIKE '%$search%'";
 		}
 
 		//echo $sql;
@@ -110,7 +110,6 @@
 						echo "<tr>";
 					}
 
-                    $sql = "SELECT username FROM profiles WHERE id = " . $row['id'];
 					echo "<td>";
 					echo "<div class='card'>";
 					echo "<img class='centered-and-cropped' src='resource/" . $row['picture'] . "'" . "width='180' height='180'>";

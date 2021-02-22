@@ -167,7 +167,7 @@
 		}
 		else
 		{
-			$sql="SELECT * FROM products WHERE name LIKE '$search%'";
+			$sql="SELECT * FROM products WHERE name LIKE '%$search%'";
 		}
 
 		//echo $sql;
