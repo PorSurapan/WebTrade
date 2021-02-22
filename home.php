@@ -74,17 +74,6 @@
 		}
 	</script>
 
-
-
-
-
-
-
-
-
-
-
-
 	<?php
 		if(isset($_GET["search"])) {
 			$search = $_GET['search'];
@@ -218,7 +207,7 @@
 		}
 		else
 		{
-			$sql="SELECT * FROM products WHERE name LIKE '$search%'";
+			$sql="SELECT * FROM products WHERE name LIKE '%$search%'";
 		}
 
 		//echo $sql;
