@@ -1,5 +1,5 @@
 body, html {
-  background-color: #ebecf0;
+  background-color: #ffffff;
 }
 body, p, input, select, textarea, button {
   font-family: 'Montserrat', sans-serif;
@@ -7,7 +7,7 @@ body, p, input, select, textarea, button {
   font-size: 16px;
 }
 div, p {
-  color: #babecc;
+  color: #ffffff;
   text-shadow: 1px 1px 1px #fff;
 }
 form {
