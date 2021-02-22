@@ -13,13 +13,14 @@ session_start();
     .button {
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 5px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     border: none;
     background: none;
     font-size: 20px;
+    height: 30px;
     margin: 4px 2px;
     cursor: pointer;
 }
@@ -41,10 +42,9 @@ session_start();
         </div>
 
         <div class="user-box">
+                           
+              <input id="description" name="description" type="text" required>
               <label for="description" class="floatLabel">คำอธิบายสินค้า</label>
-              <br/><br/>
-              <textarea rows="4" cols="50" id="description" name="description">
-                </textarea>
         </div>
 
         <div class="user-box">

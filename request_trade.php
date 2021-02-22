@@ -48,11 +48,14 @@ session_start();
     ?>
 
         <form action="trade.php" method="post" enctype = "multipart/form-data">
-            <table align="center">
+        <table align="center" width="100%">
+            <tr>
+                <td width="50%">
+                <table>
                 <tr>
-                    <td width="50%">
+                    <td>
 
-                        <table align="center">
+                        <table >
                             <tr>
                                 <br/><br/>
                                 <td> <label for="pname">ชื่อสินค้า</label> </td>
@@ -73,16 +76,18 @@ session_start();
                                     </select>
                                 </td>
                             </tr>
-                            <tr>
-                                <td> <br /><label for="pimage">รูปสินค้า</label> </td>
+                        </table>
+                </td>
+                <td width="50%">
+                    <table>
+                    <tr>
                                 <td> <br /><br /><?php echo " <img src='./resource/" .$pic. "' width='400px'/>";?><br /><br /> </td>
                             </tr>
-                        
-                        </table>
-
-                    </td>
-                
-
+                    </table>
+                </td>
+            </tr>
+        </table>     
+            
             <table align="center">
                 <tr align="center">
                     <td>

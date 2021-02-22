@@ -12,7 +12,7 @@ session_start();
 
 </head>
 
-<body style="background-color:#243b55">
+<body >
 <div class="container">
   <div class="center">
 	<?php
@@ -34,7 +34,7 @@ session_start();
 	
 	<center>	
 
-  <font color="white"><u><h2 style="text-align:center">ข้อมูลส่วนตัวแอดมิน</h2></u></font>
+  
 <div class="infocardContainer">
   <div id="main">
 

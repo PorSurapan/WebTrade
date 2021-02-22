@@ -8,13 +8,14 @@ include("config_header.php");
 .button {
   border: none;
   color: white;
-  padding: 10px 30px;
+  padding: 5px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   border: none;
   background: none;
   font-size: 20px;
+  height: 30px;
   margin: 4px 2px;
   cursor: pointer;
 }
