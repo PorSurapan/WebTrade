@@ -9,7 +9,48 @@ session_start();
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Trade - แลกเปลี่ยนสินค้า</title>
-    <link rel="stylesheet" href="edit_form.css">
+    <link rel="stylesheet" href="detail_product.css">
+
+    <style>
+.button {
+  border-radius: 4px;
+  background-color: #4CAF50;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
 </head>
 <body>
     
@@ -44,49 +85,58 @@ session_start();
 
         $conn->close(); 
     ?>
+        
+        <div class='c'>
+  <details>
+    <summary>ชื่อสินค้า</summary>
+    <p>
+      <b><?php echo $name;?></b>
+    </p>
+  </details>
 
-        <form action="trade.php" method="post" enctype = "multipart/form-data">
-        <table align="center">
-                <tr>
-                    <td width="50%">
+  <details>
+    <summary>คำอธิบาย</summary>
+    <p>
+    <b><?php echo $des;?></b>
+    </p>
+  </details>
 
-                        <table align="center">
-                            <tr><br/><br/></tr>
-                            <tr>
-                                <td> <label for="pname">ชื่อสินค้า</label> <br/><br/></td>
-                                <td> <?php echo $name;?> <br/><br/></td>
-                                
-                            </tr>
-                            <tr>
-                                <td> <label for="describe">คำอธิบาย</label><br/><br/> </td>
-                                <td> <?php echo $des;?><br/><br/></td>
-                            </tr>
-                            <tr>
-                                <td> <label for="category">หมวดหมู่</label><br/><br/> </td>
-                                <td> <?php echo  $cate;?><br/><br/></td>
-                            </tr>
-                            <tr>
-                                <td> <label for="status">สถานะ</label><br/><br/> </td>
-                                <td> <?php echo  $status;?><br/><br/></td>
-                                <input type="hidden"  name="status" value="<?php echo $status; ?>">
-                            </tr>
-                            <tr>
-                                <td> <br /><label for="pimage">รูปสินค้า</label> </td>
-                                <td><?php echo " <img src='./resource/" .$pic. "' width='400px'/>";?></td>
-                            </tr>
-                    </table>
-        </table>
-        <table align="center">
+  <details>
+    <summary>หมวดหมู่</summary>
+    <p>
+    <b><?php echo  $cate;?></b>
+    </p>
+  </details>
+
+  <details>
+    <summary>สถานะ</summary>
+    <p>
+    <b><?php echo  $status;?>
+    <input type="hidden"  name="status" value="<?php echo $status; ?>"></b>
+    </p>
+  </details>
+
+  <details>
+    <summary>รูปสินค้า</summary>
+    <p>
+    <?php echo " <img src='./resource/" .$pic. "' width='400px'/>";?>
+    </p>
+  </details>
+
+    <table align="center">
                 <tr align="center">
                     <td>
                         <br /><br />
-                        <input type="submit" value="แลกเปลี่ยน">
+                        <a href="trade_form.php"><button class="button"><span>แลกเปลี่ยน</span></button>
                         <input type="hidden"  name="pID" value="<?php echo $id; ?>">
                         <input type="hidden"  name="proID" value="<?php echo $_SESSION['s_id'];?>">
                         <input type="hidden"  name="pOwn" value="<?php echo $own; ?>">
                     </td>
                 </tr>
             </table>
-    </form>
+  </div>
+</div>
+ 
+    
 </body>
 </html>
