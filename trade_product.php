@@ -130,7 +130,6 @@ session_start();
                         <br /><br />
                         <a href="trade_form.php"><button class="button"><span>แลกเปลี่ยน</span></button>
                         <input type="hidden"  name="pID" value="<?php echo $id; ?>">
-                        <input type="hidden"  name="proID" value="<?php echo $_SESSION['s_id'];?>">
                         <input type="hidden"  name="pOwn" value="<?php echo $own; ?>">
                       
                     </td>
