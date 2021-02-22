@@ -34,7 +34,7 @@
 
             $conn->close();
 
-                if ($role == "admin")
+                if ($role == "แอดมิน")
 			        header("Location: main.php");
                 else
                     header("Location: home.php");
