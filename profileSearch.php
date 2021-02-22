@@ -7,15 +7,15 @@
     $conn->query("SET NAMES UTF8");
 
     if ($name != null)
-        $sql="SELECT name FROM products WHERE name LIKE '%$name%'";
+        $sql="SELECT username FROM profiles WHERE username LIKE '%$name%'";
     else
-        $sql="SELECT name FROM products WHERE id = 0";
+        $sql="SELECT username FROM profiles WHERE id = 0";
 
     $rs=$conn->query($sql);
 
     $all = "";
     while($row = $rs->fetch_assoc()) {
-        $all .= $row['name'] . ",";
+        $all .= $row['username'] . ",";
     }
     echo $all;
 

@@ -1,0 +1,71 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 190px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    font-size: 12px;
+}
+
+.price {
+    color: grey;
+    font-size: 15px;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: rgb(71, 71, 71);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 15px;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+
+.centered-and-cropped { 
+    object-fit: cover;
+}
+
+input[type=text], input[list=date], select, textarea {
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical
+}
+
+.button {
+    background-color: #ffffff;
+    border: none;
+    color: white;
+    padding: 9px 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  .button1 {
+    background-color: white; 
+    color: rgb(34, 34, 34); 
+    border: 2px solid #8d8d8d;
+  }

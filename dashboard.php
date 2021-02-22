@@ -10,9 +10,9 @@
 	}
 	mysqli_select_db($con, "trader");
 	
-	$sql = "INSERT INTO products (owner,name,description,category,picture,status,hide)
-			VALUES('" . $_POST['owner'] . "', '" . $_POST['name'] . "', '" . $_POST['description'] . "',
-			'" . $_POST['category'] . "', '" . $_FILES["picture"]["name"] . "', '" . $_POST['status'] . "', '" . $_POST['hide'] . "')";
+	$sql = "INSERT INTO dashboard (owner,text,date,picture,hide)
+			VALUES('" . $_POST['owner'] . "', '" . $_POST['description'] . "', '" . $_POST['currentDateTime'] . "',
+			'" . $_FILES["picture"]["name"] . "', '" . $_POST['hide'] . "')";
 
 if (move_uploaded_file($tempname, $folder))  { 
 	$msg = "Image uploaded successfully"; 
@@ -25,7 +25,7 @@ if (move_uploaded_file($tempname, $folder))  {
 	if(!$result){
 			die('Error query: ' . mysqli_error());
 	}else{
-			header("Location: home.php");
+			header("Location: home_dashboard.php");
 			
 	} 
 	mysqli_close($con);

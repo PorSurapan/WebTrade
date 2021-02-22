@@ -28,7 +28,7 @@
     </script>
 </head>
 
-<body onload="getImg();">
+<body>
     <?php
         $id = $_GET['id'];
         // echo $id;
@@ -116,7 +116,7 @@
                                 <td> <br /><br /><input type="file" id="pimage" name="productImage" onchange="preview()"><br /><br /> </td>
                             </tr>
                             <tr>
-                                <td> <br /><label for="hide">การมองเห็น</label> </td>
+                                <td> <br /><label for="visual">การมองเห็น</label> </td>
                                 <td>
                                     <br />
                                     <?php if ($hide == 0) { ?>

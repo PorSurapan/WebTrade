@@ -12,7 +12,7 @@
     
     $conn=mysqli_connect("localhost", "root", "","trader");
     $conn->query("SET NAMES UTF8");
-    $sql = "SELECT * FROM profiles WHERE username = '$username' AND password = '$password'";
+    $sql = "SELECT * FROM profiles WHERE username = '$username' AND password = '$password' AND status = 'ปกติ'";
     $rs = $conn->query($sql);
 
     if(!$rs || mysqli_num_rows($rs) == 0) {
@@ -34,7 +34,7 @@
 
             $conn->close();
 
-                if ($role == "admin")
+                if ($role == "แอดมิน")
 			        header("Location: main.php");
                 else
                     header("Location: home.php");

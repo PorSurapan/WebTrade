@@ -8,8 +8,20 @@ session_start();
 <html>
 <head>
     <title>ข้อมูลส่วนตัว</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href = "profile_css.css">
 
+<script type = "text/javascript">
+
+function ConfirmDelete()
+{
+ var del = confirm("คุณแน่ใจว่าจะลบสินค้าชิ้นนี้ใช่หรือไม่?");
+ if (del == true)
+	return true;
+	else
+	return false;
+}
+
+</script>
 <style>
 
 .card2 {
@@ -39,7 +51,8 @@ button {
 </head>
 
 <body style="background-color:#243b55">
-
+<div class="container">
+  <div class="center">
 	<?php
 	
 	$con = mysqli_connect("localhost", "root", "");
@@ -59,32 +72,36 @@ button {
 	
 	<center>	
 
+  <font color="white"><u><h2 style="text-align:center">ข้อมูลส่วนตัว</h2></u></font>
+<div class="infocardContainer">
+  <div id="main">
 
-<font color="white"><u><h2 style="text-align:center">ข้อมูลส่วนตัว</h2></u></font>
-
-<div class="card2">
-<?php
-		echo " <font color= 'black'><img src='./resource/" .$result['photo']. "' width='100%'/></font>";
+  <?php
+		echo "<img src='./resource/" .$result['photo']. "' width='100%'/></font>";
 	?>
+  </div>
 
-  <h1><?php
-					echo  " <font color= 'white'>".$result['username'];
-					?></h1>
+  <div id="textbois">
 
-  <p><?php
-					echo " <font color= 'white'>".$result['roles']."</font>";
-					?></p>
+    <h1><?php echo $result['username'];?></h1>
 
-  <p><?php
-					echo " <font color= 'white'>".$result['tel']."</font>";
-					?></p>
+    <h4><?php echo $result['roles']."</font>";?></h4>
 
-  <p><button onclick="location.href='edit_profile_form.php';">แก้ไขโปรไฟล์</button></p>
+    <h4><?php echo $result['tel']."</font>";?></h4>
+
+<div id="hotlinks">
+<a href="edit_profile_form.php">
+        <img id="edit" src="http://cdn.onlinewebfonts.com/svg/img_140266.png" target="_blank"></img>
+      </a>
+	  <a href="#.php">
+        <img id="del" src="https://icon-library.com/images/cancel-icon-png/cancel-icon-png-2.jpg" target="_blank"></img>
+      </a>
+      </div>
+  </div>
 </div>
+
 <?php } ?>
 
-</body>
-</html>
 
 	<br/><br/>
 		<center><h2><u><font color="white">สินค้าที่คุณลงเทรด</font></u></h2></center>
