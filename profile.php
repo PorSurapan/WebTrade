@@ -47,7 +47,7 @@ button {
   outline: 0;
   display: inline-block;
   padding: 8px;
-  color: blue;
+  color: white;
   background-color: #000;
   text-align: center;
   cursor: pointer;
