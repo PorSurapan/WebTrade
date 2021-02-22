@@ -10,33 +10,44 @@
           padding: 100px 0;
           text-align: center;
         }
-        </style>
+        
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button2 {background-color: #008CBA;} /* Blue */
+
+</style>
 
 </head>
 
 <body>
-    <div class="center">
-    <table align="center" class="cener">
-        <tr>
-            <td>
-                <img src="./resource/hand.png" height="400px" />
-            </td>
-            <td align="center">
                 <form action="check_login.php" method="post">
-                    <div class="box">
-                        <h1><font color="black">ล็อคอิน</h1></font>
-                        <input type="text" name="username" id="username" class="email" placeholder="ชื่อผู้ใช้" required/>
-                        <br /><br />
-                        <input type="password" name="password" id="password" class="password" placeholder="รหัสผ่าน" required/>
-                        <br /><br />
+
+                    <div class="container" onclick="onclick">
+    
+                        <div class="top"></div>
+                        <div class="bottom"></div>
+                        <div class="center">
+                        <h2><font color="black">ล็อคอิน</h2></font>
+                        <input type="text" name="username" id="username"placeholder="ชื่อผู้ใช้" required/>
+                        
+                        <input type="password" name="password" id="password"placeholder="รหัสผ่าน" required/>
+                       
                         <p id="failed" class="p"></p>
-                        <input type="submit" value="เข้าสู่ระบบ" class="btn" />
-                        <input type="submit" value="สมัครสมาชิก" class="btn2" onclick="location.href='register_form.php'"/>
+                        <input type="submit" value="เข้าสู่ระบบ" class="button" />
+                        <input type="submit" value="สมัครสมาชิก" class="button button2" onclick="location.href='register_form.php'"/>
                     </div>
-                </form>
-            </td>
-        </tr>
-    </table>
-    </div>
+                </div>  
+           </form>
 </body>
 </html>
