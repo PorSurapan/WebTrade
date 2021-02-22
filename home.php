@@ -9,6 +9,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Trade - สินค้าเทรด</title>
     <link rel="stylesheet" href="show_product.css">
+	<link rel="stylesheet" href="img_modal.css">
 	<script src="searchProducts.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
@@ -20,7 +21,60 @@
     </script>
 </head>
 <body>
-<?php
+	<?php
+		$conn=mysqli_connect("localhost", "root", "", "trader");
+		$conn->query("SET NAMES UTF8");
+		$sql = "SELECT * FROM advertising WHERE hide = 'แสดง' LIMIT 1";
+
+		$rs=$conn->query($sql);
+		while($row = $rs->fetch_assoc())
+		{
+			$path = $row['picture'];
+		}
+		$conn->close();
+	?>
+
+	<img id="myImg" src="resource/<?php echo $path ?>" style="display: none;">
+
+	<!-- modal -->
+	<div id="myModal" class="modal">
+		<span class="close">&times;</span>
+		<img class="modal-content" id="img01">
+	</div>
+
+	<script>
+		// Get the modal
+		var modal = document.getElementById("myModal");
+
+		// Get the image and insert it inside the modal
+		var img = document.getElementById("myImg");
+		var modalImg = document.getElementById("img01");
+		img.onload = function() {
+			modal.style.display = "block";
+			modalImg.src = this.src;
+		}
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on <span> close the modal
+		span.onclick = function() { 
+			modal.style.display = "none";
+		}
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+	<?php
 		if(isset($_GET["search"])) {
 			$search = $_GET['search'];
 		} else {
@@ -52,7 +106,7 @@
 		}
 	?>
 
-<table align="center" width="90%">
+	<table align="center" width="90%">
 		<tr>
 			<form action="home.php" method="get">
 			<td>

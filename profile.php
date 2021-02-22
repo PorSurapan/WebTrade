@@ -59,7 +59,7 @@ button {
 
 </head>
 
-<body style="background-color:#243b55">
+<body>
 <div class="container">
   <div class="center">
 	<?php
@@ -81,7 +81,7 @@ button {
 	
 	<center>	
 
-  <font color="white"><u><h2 style="text-align:center">ข้อมูลส่วนตัว</h2></u></font>
+  <h2 style="text-align:center">ข้อมูลส่วนตัว</h2>
 <div class="infocardContainer">
   <div id="main">
 
@@ -113,7 +113,7 @@ button {
 
 
 	<br/><br/>
-		<center><h2><u><font color="white">สินค้าที่คุณลงเทรด</font></u></h2></center>
+		<center><h2>สินค้าที่คุณลงเทรด</h2></center>
 	 
 	<?php
         $conn = mysqli_connect("localhost", "root", "", "trader");
