@@ -8,46 +8,7 @@ session_start();
 <html>
 <head>
     <title>ข้อมูลส่วนตัว</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<style>
-
-.container { 
-  height: 500px;
-}
-
-.center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-  background: #141e30;
-}
-
-button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: blue;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 20px;
-}
-
-</style>
+    <link rel="stylesheet" href = "profile_css.css">
 
 </head>
 
@@ -73,29 +34,34 @@ button {
 	
 	<center>	
 
+  <font color="white"><u><h2 style="text-align:center">ข้อมูลส่วนตัวแอดมิน</h2></u></font>
+<div class="infocardContainer">
+  <div id="main">
 
-<font color="white"><u><h2 style="text-align:center">ข้อมูลส่วนตัวแอดมิน</h2></u></font>
-
-<div class="card">
-<?php
-		echo " <font color= 'black'><img src='./resource/" .$result['photo']. "' width='100%'/></font>";
+  <?php
+		echo "<img src='./resource/" .$result['photo']. "' width='100%'/></font>";
 	?>
+  </div>
 
-  <h1><?php
-					echo  " <font color= 'white'>".$result['username'];
-					?></h1>
+  <div id="textbois">
 
-  <p class="title"><?php
-					echo " <font color= 'white'>".$result['roles']."</font>";
-					?></p>
+    <h1><?php echo $result['username'];?></h1>
 
-  <p><?php
-					echo " <font color= 'white'>".$result['tel']."</font>";
-					?></p>
+    <h4><?php echo $result['roles']."</font>";?></h4>
 
-  <p><button onclick="location.href='editprofile_admin.php';">แก้ไขโปรไฟล์</button></p>
+    <h4><?php echo $result['tel']."</font>";?></h4>
+
+<div id="hotlinks">
+<a href="editprofile_admin.php">
+        <img id="edit" src="http://cdn.onlinewebfonts.com/svg/img_140266.png" target="_blank"></img>
+      </a>
+      </div>
+  </div>
 </div>
+
 <?php } ?>
+
 
 </body>
 </html>
+
