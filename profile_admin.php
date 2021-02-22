@@ -8,7 +8,7 @@ session_start();
 <html>
 <head>
     <title>ข้อมูลส่วนตัว</title>
-    <link rel="stylesheet" href = "profile_css.css">
+    <link rel="stylesheet" href = "profileadmin_css.css">
 
 </head>
 
