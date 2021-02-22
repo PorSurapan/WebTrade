@@ -1,9 +1,3 @@
-<?php
-	session_start();
-	if (isset($_SESSION['logged']) && $_SESSION['logged'] == true)
-		include("config_header.php");
-?>
-
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -62,17 +56,6 @@
 			modal.style.display = "none";
 		}
 	</script>
-
-
-
-
-
-
-
-
-
-
-
 
 	<?php
 		if(isset($_GET["search"])) {
