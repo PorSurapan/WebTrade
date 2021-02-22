@@ -21,6 +21,15 @@ function ConfirmDelete()
 	return false;
 }
 
+function ConfirmDelete2()
+{
+ var del = confirm("คุณแน่ใจว่าจะปิดบัญชีใช่หรือไม่?");
+ if (del == true)
+	return true;
+	else
+	return false;
+}
+
 </script>
 <style>
 
@@ -93,7 +102,7 @@ button {
 <a href="edit_profile_form.php">
         <img id="edit" src="http://cdn.onlinewebfonts.com/svg/img_140266.png" target="_blank"></img>
       </a>
-	  <a href="#.php">
+	  <a href="close.php?id= <?php echo $_SESSION['s_id'] ?>" onclick = "return ConfirmDelete2()">
         <img id="del" src="https://icon-library.com/images/cancel-icon-png/cancel-icon-png-2.jpg" target="_blank"></img>
       </a>
       </div>
