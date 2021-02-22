@@ -1,7 +1,13 @@
 <?php
 	session_start();
-	if (isset($_SESSION['logged']) && $_SESSION['logged'] == true)
-		include("config_header.php");
+	include("config_header.php");
+
+	if (!isset($_SESSION['views'])) { 
+		$_SESSION['views'] = 0;
+	}
+	
+	$_SESSION['views'] = $_SESSION['views'] + 1;
+	$session = $_SESSION['views'];
 ?>
 
 <html>
@@ -34,6 +40,7 @@
 		$conn->close();
 	?>
 
+	<input type="hidden" id="session" value="<?php echo $session ?>" />
 	<img id="myImg" src="resource/<?php echo $path ?>" style="display: none;">
 
 	<!-- modal -->
@@ -50,8 +57,12 @@
 		var img = document.getElementById("myImg");
 		var modalImg = document.getElementById("img01");
 		img.onload = function() {
-			modal.style.display = "block";
-			modalImg.src = this.src;
+			var num = document.getElementById("session").value;
+			
+			if (num == 1) {
+				modal.style.display = "block";
+				modalImg.src = this.src;
+			}
 		}
 
 		// Get the <span> element that closes the modal
@@ -62,17 +73,6 @@
 			modal.style.display = "none";
 		}
 	</script>
-
-
-
-
-
-
-
-
-
-
-
 
 	<?php
 		if(isset($_GET["search"])) {
@@ -207,7 +207,7 @@
 		}
 		else
 		{
-			$sql="SELECT * FROM products WHERE name LIKE '$search%'";
+			$sql="SELECT * FROM products WHERE name LIKE '%$search%'";
 		}
 
 		//echo $sql;

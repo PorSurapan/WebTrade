@@ -24,8 +24,6 @@
             $role = $row['roles'];
             $username = $row['username'];
             $id = $row['id'];
-            
-
 
             $_SESSION['logged'] = true;
             $_SESSION["s_id"] = $id;
