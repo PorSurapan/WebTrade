@@ -78,11 +78,11 @@ session_start();
 
 
         <div class="user-box">
-          <input type="hidden" id="sender" name="sender" value="<?php echo $pid ?>">
+          <input type="hidden" id="sender" name="sender" value="<?php echo $owner ?>">
         </div>
 
         <div class="user-box">
-          <input type="hidden" id="product" name="product" value="<?php echo $owner ?>">
+          <input type="hidden" id="product" name="product" value="<?php echo $pid ?>">
         </div>
         
 
