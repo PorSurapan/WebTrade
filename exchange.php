@@ -10,9 +10,9 @@
 	}
 	mysqli_select_db($con, "trader");
 	
-	$sql = "INSERT INTO exchange (owner,name,description,contact,picture)
+	$sql = "INSERT INTO exchange (owner,name,description,contact,picture,sender,product)
 			VALUES('" . $_POST['owner'] . "', '" . $_POST['name'] . "', '" . $_POST['description'] . "',
-			'" . $_POST['tel'] . "', '" . $_FILES["picture"]["name"] . "')";
+			'" . $_POST['tel'] . "', '" . $_FILES["picture"]["name"] . "', '" . $_POST['sender'] . "', '" . $_POST['product'] . "')";
 
 if (move_uploaded_file($tempname, $folder))  { 
 	$msg = "Image uploaded successfully"; 

@@ -56,6 +56,34 @@ session_start();
         <div class="user-box">
           <input type="hidden" id="owner" name="owner" value="<?php echo $_SESSION['s_id'];?>">
         </div>
+
+
+
+<?php 
+    
+    $id = $_GET['pID'];
+
+    $conn=mysqli_connect("localhost", "root", "","trader");
+    $conn->query("SET NAMES UTF8");
+    $sql = "SELECT * FROM products WHERE id = $id";
+    $rs = $conn->query($sql);
+
+        while($row = $rs->fetch_assoc()) {
+            $pid = $row['id'];
+            $owner = $row['owner'];
+        }
+
+        $conn->close();
+?>
+
+
+        <div class="user-box">
+          <input type="hidden" id="sender" name="sender" value="<?php echo $pid ?>">
+        </div>
+
+        <div class="user-box">
+          <input type="hidden" id="product" name="product" value="<?php echo $owner ?>">
+        </div>
         
 
         <center>

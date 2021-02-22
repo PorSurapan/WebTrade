@@ -123,6 +123,7 @@ session_start();
     </p>
   </details>
 
+  <form action="trade_form.php" method="get">
     <table align="center">
                 <tr align="center">
                     <td>
@@ -131,12 +132,14 @@ session_start();
                         <input type="hidden"  name="pID" value="<?php echo $id; ?>">
                         <input type="hidden"  name="proID" value="<?php echo $_SESSION['s_id'];?>">
                         <input type="hidden"  name="pOwn" value="<?php echo $own; ?>">
+                      
                     </td>
                 </tr>
             </table>
   </div>
 </div>
- 
+</form>
+
     
 </body>
 </html>
