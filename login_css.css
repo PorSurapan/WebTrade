@@ -3,7 +3,7 @@
 	 box-sizing: border-box;
 }
  body {
-	 min-height: 100vh;
+	 min-height: 0vh;
 	 font-family: 'Raleway', sans-serif;
 }
  .container {
