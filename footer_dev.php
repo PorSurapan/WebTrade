@@ -12,8 +12,6 @@
     <p>©Trader</p>
 
     <?php
-        $output = exec("nodescript.js", $output);
+        //$output = exec("nodescript.js", $output);
     ?>
-
-    <a href="http://localhost/WebTrade/name1.html?file1=hello2.htm&file2=hello1.htm">
 </footer>
