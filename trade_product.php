@@ -68,6 +68,7 @@ session_start();
                             <tr>
                                 <td> <label for="status">สถานะ</label><br/><br/> </td>
                                 <td> <?php echo  $status;?><br/><br/></td>
+                                <input type="hidden"  name="status" value="<?php echo $status; ?>">
                             </tr>
                             <tr>
                                 <td> <br /><label for="pimage">รูปสินค้า</label> </td>
