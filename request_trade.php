@@ -14,12 +14,15 @@ session_start();
 </head>
 
 <body>
+
+
+
 <?php
-        $id = $_SESSION['s_id'];
-        // echo $id;
+        $id = $_GET['id'];
+        //echo $id;
 
         $conn = new mysqli("localhost", "root", "", "trader");
-        $sql = "SELECT * FROM exchange WHERE sender = $id";
+        $sql = "SELECT * FROM exchange WHERE id = $id";
         // echo $sql; //print out for debugging
         $rs=$conn->query($sql);
 
@@ -27,12 +30,15 @@ session_start();
         {
             while($row = $rs->fetch_assoc())
             {
-                $pid = $id;
+                $pid = $row['id'];
                 $own = $row['owner'];
                 $name = $row['name'];
                 $des = $row['description'];
                 $pic = $row['picture'];
                 $status = $row['status'];
+                if($status == null || $status == "")
+                    $status = '--โปรดเลือก--';
+
                 $contact = $row['contact'];
                 $sender = $row['sender'];
                 $product = $row['product'];
@@ -61,15 +67,18 @@ session_start();
                                 <td> <label for="pname">ชื่อสินค้า</label> </td>
                                 <td> <?php echo $name; ?></td>
                             </tr>
-                            <tr></tr>
                             <tr>
-                                <td> <label for="describe">คำอธิบาย</label> </td>
-                                <td> <?php echo $des; ?></td>
+                                <td><br/><br/> <label for="describe">คำอธิบาย</label> </td>
+                                <td><br/><br/> <?php echo $des; ?></td>
                             </tr>
                             <tr>
-                                <td> <label for="status">สถานะ</label> </td>
-                                <td>
-                                    <select id="status" name="status">
+                                <td><br/><br/> <label for="describe">ติดต่อ</label> </td>
+                                <td><br/><br/> <?php echo $contact; ?></td>
+                            </tr>
+                            <tr>
+                                <td><br/><br/> <label for="status">สถานะ</label> </td>
+                                <td><br/><br/>
+                                    <select id="status" name="status" required>
                                         <option value="<?php echo $status; ?>" selected hidden ><?php echo $status; ?></option>
                                         <option value="ยอมรับ">ยอมรับ</option>
                                         <option value="ปฏิเสธ">ปฏิเสธ</option>
@@ -93,10 +102,8 @@ session_start();
                     <td>
                         <br /><br />
                         <input type="submit" value="แลกเปลี่ยน">
-                        <input type="hidden" name="pID" value="<?php echo $id; ?>">
-                        <input type="hidden"  name="proID" value="<?php echo $_SESSION['s_id'];?>">
-                        <input type="hidden" name="pOwn" value="<?php echo $own; ?>">
-                        <input type="hidden" name="product" value="<?php echo $product; ?>">
+                        <input type="hidden"  name="owner" value="<?php echo $own;?>">
+                        <input type="hidden" name="prodID" value="<?php echo $product; ?>">
                     </td>
                 </tr>
             </table>

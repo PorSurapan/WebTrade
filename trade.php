@@ -1,36 +1,40 @@
 <?php
     session_start();
 
-    $own = $_POST['pOwn'];
-    $proID = $_POST['proID'];
-    $pID = $_POST['pID'];
     $status = $_POST['status'];
-    $product = $_POST['product'];
+    if ($status == "--โปรดเลือก--")
+        header("location:javascript://history.go(-1)");
+
+
+    $uid = $_SESSION['s_id'];
+    $own = $_POST['owner'];
+
+    $product = $_POST['prodID'];
     // $status = $_POST['status'];
-    
-    
+    //echo $status;
+
 	$con = new mysqli("localhost", "root", "","trader");	
-
 	$sql1 = "INSERT INTO trade (sender,receiver,product)
-			VALUES('"  . $proID . "', '" . $own . "', '" . $pID . "')";
+			VALUES('"  . $uid . "', '" . $own . "', '" . $product . "')";
+    $con->query($sql1);
 
-    $sql2 = "UPDATE products SET status = 'เทรดแล้ว'
-                                  WHERE id = '$product'";
+    if($status == "ยอมรับ") {
+        $sql2 = "UPDATE products SET status = 'เทรดแล้ว' WHERE id = '$product'";
+        $con->query($sql2);
 
-    $sql3 = "UPDATE exchange SET status = '$status'
-                                    WHERE product = '$product'";
+        $sql3 = "UPDATE exchange SET status = '$status' WHERE product = '$product'";
+        $con->query($sql3);
+    } else {
+        $sql4 = "UPDATE exchange SET status = '$status' WHERE product = '$product'";
+        $con->query($sql4);
 
-         //echo $status;
+        $sql5 = "UPDATE products SET status = 'รอเทรด' WHERE id = '$product'";
+        $con->query($sql5);
+    }
+
+    echo '<script type="text/javascript">';
+    echo 'if(!alert("เทรดสินค้าแล้ว!")) document.location = "list_request.php";';
+    echo '</script>';
     
-    if(($con->query($sql1))&&($con->query($sql2))&&($con->query($sql3)))
-    {
-        echo '<script type="text/javascript">';
-        echo 'if(!alert("เทรดสินค้าแล้ว!")) document.location = "home.php";';
-        echo '</script>';
-    }
-    else{
-        echo "error";
-    }
-    $con->close();
-			
+    $con->close();	
 ?>
