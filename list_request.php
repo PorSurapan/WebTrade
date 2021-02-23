@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Trade - แลกเปลี่ยนสินค้า</title>
+    <title>Trade - คำขอเทรด</title>
     <link rel="stylesheet" href="show_list.css">
     <script type="text/javascript">
         function edt(ind)
