@@ -29,8 +29,13 @@
 	if(!$result){
 			die('Error query: ' . mysqli_error());
 	}else{
+		if($_POST["role"] == 'ผู้ลงเทรด'){
 		$_SESSION["s_username"] = $_POST["username"];
-			header("Location: profile.php");
+			header("Location: profile_sender.php");
+		}else{
+			$_SESSION["s_username"] = $_POST["username"];
+			header("Location: profile_receiver.php");
+		}
 	} 
 	mysqli_close($con);
 ?>

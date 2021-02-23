@@ -95,6 +95,8 @@
 
         $conn->close();
 	?>
-
+<?php
+		include("footer_dev.php");
+	?>
 </body>
 </html>
