@@ -1,8 +1,10 @@
 <?php
 session_start();
-	if(isset($_SESSION['logged']) && $_SESSION['s_username'] == true){
-		include("config_header.php");
-	}
+  if(isset($_SESSION['s_username']) && $_SESSION['logged'] == true){
+    include("config_header.php");
+  } else {
+    header("Location: login.html");
+  }
 ?>
 
 <html>

@@ -1,5 +1,6 @@
 <?php
-
+	session_start();
+	
 	$filename = $_FILES["picture"]["name"]; 
     $tempname = $_FILES["picture"]["tmp_name"];
 	$folder = "./resource/".$filename; 

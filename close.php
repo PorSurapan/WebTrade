@@ -1,4 +1,6 @@
 <?php
+	session_start();
+	
 	$id = $_GET["id"];
 	$con = mysqli_connect("localhost", "root", "");
 	$con->query("SET NAMES UTF8");
@@ -13,7 +15,7 @@
 	if(!$result){
 			die('Error query: ' . mysqli_error());
 	}else{
-			header("Location: login.html");
+			header("Location: logout.php");
 			
 	} 
 	mysqli_close($con); 

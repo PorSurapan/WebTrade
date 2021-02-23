@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	if (isset($_SESSION['logged']) && $_SESSION['logged'] == true)
+	if (isset($_SESSION['s_username']) && $_SESSION['logged'] == true)
 		include("header_admin.html");
 	else
 		header("Location: login.html");

@@ -1,7 +1,9 @@
 <?php
 session_start();
-	if(isset($_SESSION['logged']) && $_SESSION['s_id'] == true)
-    include("header_receiver.html");
+	if(isset($_SESSION['s_id']) && $_SESSION['logged'] == true)
+        include("header_receiver.html");
+    else
+        header("Location: login.html");
 ?>
 <html>
 <head>

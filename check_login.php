@@ -1,11 +1,5 @@
 <?php
     session_start();
-
-	if (isset($_SESSION['logged']) && $_SESSION['logged'] == true)
-		include("header_admin.html");
-	else
-        header("Location: login.html");
-
     
     $username = $_POST["username"];
     $password = $_POST["password"];

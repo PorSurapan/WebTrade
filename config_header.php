@@ -16,8 +16,8 @@
 
             if ($role == "ผู้ลงเทรด")
                 include("header_sender.html");
-            else 
-            include("header_receiver.html");
+            else
+                include("header_receiver.html");
         }
     }
     else
