@@ -130,7 +130,7 @@ button {
 					$name = $row['name'];
 					echo "<td>";
 					echo "<div class='card'>";
-					echo "<img class='centered-and-cropped' src='resource/" . $row['picture'] . "'" . "width='220' height='200'>";
+					echo "<img class='centered-and-cropped' src='resource/" . $row['picture'] . "'" . "width='300' height='300'>";
 					echo "<h2><center>" . $row['name'] . "</center></h2>";
 					echo "<p class='price'><center>" . $row['status'] . "</center></p>";
 					echo '<button><a href="detail_product_trade.php?id=' . $row['id']  .'&product=' . $row['product'] . '">รายละเอียด</a></td></button>';

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700");
 html {
-  background-color: #243b55;
+  background-color: #fff;
   user-select: none;
 }
 
@@ -12,7 +12,7 @@ html {
 }
 
 details {
-  color: white;
+  color: rgb(27, 27, 27);
   cursor: pointer;
   font-family: "roboto", arial;
   font-weight: 300;
@@ -20,7 +20,7 @@ details {
   width: 33vw;
 }
 details summary {
-  background: linear-gradient(#333333, #1a1a1a);
+  background: linear-gradient(#a7a7a7, #575757);
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
   padding: 2.5vh;
