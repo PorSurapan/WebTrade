@@ -17,7 +17,7 @@
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-        alert(this.responseText);
+        //alert(this.responseText);
         uObj = JSON.parse(this.responseText);
         var txt = "©TRADE | Welcome " + uObj[0] + " | บทบาท: " + uObj[1] + " | สถานะบัญชี: " + uObj[2];
         document.getElementById("data").innerHTML = txt;
