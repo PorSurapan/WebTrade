@@ -9,7 +9,7 @@ session_start();
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Trade - แลกเปลี่ยนสินค้า</title>
+    <title>Trade - รายละเอียดสินค้าที่คุณนำไปเทรด</title>
     <link rel="stylesheet" href="edit_form.css">
     
 </head>

@@ -8,7 +8,7 @@ session_start();
 
 <html>
 <head>
-    <title>ข้อมูลส่วนตัว</title>
+    <title>Trade - ข้อมูลส่วนตัว</title>
 	<link rel="stylesheet" href = "profile_css.css">
 
 <script type = "text/javascript">
