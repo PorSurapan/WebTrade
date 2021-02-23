@@ -108,47 +108,9 @@ button {
       </div>
   </div>
 </div>
-
 <?php } ?>
 
-
-	<br/><br/>
-		<center><h2>สินค้าที่คุณลงเทรด</h2></center>
-	 
-	<?php
-        $conn = mysqli_connect("localhost", "root", "", "trader");
-        $conn->query("SET NAMES UTF8");
-        $sql = "SELECT * FROM products WHERE owner = " . " '" . $_SESSION['s_id'] . "' ";
-        $rs = $conn->query($sql);
-		$i = 0;
-
-		echo "<table align='center' bgcolor = 'white'>";
-        	echo "<tr>";
-				while($row = $rs->fetch_assoc()) {
-					if ($i % 5 == 0) {
-						echo "</tr>";
-						echo "<tr>";
-					}
-					$name = $row['name'];
-					echo "<td>";
-					echo "<div class='card'>";
-					echo "<img class='centered-and-cropped' src='resource/" . $row['picture'] . "'" . "width='220' height='200'>";
-					echo "<h2><center>" . $row['name'] . "</center></h2>";
-					echo "<p><center>" . $row['category'] . "</center></p>";
-					echo "<p class='price'><center>" . $row['status'] . "</center></p>";
-					echo '<button><a href="delete_products.php?id=' . $row['id'] . '" onclick = "return ConfirmDelete()" >ลบสินค้าเทรด</a></td></button>';
-					echo "</div>";
-					echo "</td>";
-
-					$i++;
-				}
-			echo "</tr>";
-		echo "</table>";
-
-        $conn->close();
-	?>
-
-	<br/><br/>
+<br/><br/>
 	<center><h2>สินค้าที่คุณนำไปเทรด</h2></center>
 	 
 	<?php
