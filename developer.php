@@ -56,6 +56,7 @@
     <td data-field="major"></td>
   </tr>
 </table>
-  
+<script type="text/javascript" src="dev_db.js"></script>
+<a href="http://localhost:3000/dev">BTN</a>
 </body>
 </html>
