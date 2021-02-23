@@ -11,7 +11,7 @@
     }
 
     li {
-        float: center;
+        float: left;
     }
 
     li a {
@@ -28,6 +28,14 @@
     }
 </style>
 
+<script type="text/javascript">
+    function redir() {
+        window.location = "home.php";
+    }
+</script>
+
 <ul>
-    <li><img src="resource/logotradenew.png" height="38px"/></li>
+    <li><img src="resource/logotradenew.png" height="38px" onclick="redir()"/></li>
+    <li style="float:right"><a class="active" href="register_form.php">สมัครสมาชิก</a></li>
+    <li style="float:right"><a class="active" href="login.html">เข้าสู่ระบบ</a></li>
 </ul>
