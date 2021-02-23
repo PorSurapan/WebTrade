@@ -65,8 +65,6 @@
             </table>
         </form>
 
-        <?php
-		include("footer_dev.php");
-	?>
+     
 </body>
 </html>
