@@ -13,6 +13,7 @@
             include("header_sender.html");
             else 
             include("header_receiver.html");
+            include("header_user.html");
         }
 
         $conn->close();
