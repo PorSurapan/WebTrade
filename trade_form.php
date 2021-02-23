@@ -14,7 +14,7 @@ session_start();
 <style>
     .button {
     border: none;
-    color: white;
+    color: black;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -29,7 +29,7 @@ session_start();
 </head>
 <body> 
 <div class="login-box">
-    <h2>สินค้าที่ต้องการเทรด</h2>
+    <h2><font color="#8A0041">สินค้าที่ต้องการเทรด</h2></font>
 <form action="exchange.php" method="post" enctype="multipart/form-data">
         <div class="user-box">
               <label for="picture" class="floatLabel">รูปภาพสินค้า</label>

@@ -9,7 +9,7 @@ else
 <style>
 .button {
   border: none;
-  color: white;
+  color: black;
   padding: 5px 10px;
   text-align: center;
   text-decoration: none;
@@ -66,7 +66,7 @@ else
 
 
 <div class="login-box">
-  <h2>แก้ไขข้อมูลส่วนตัว</h2>
+  <h2><font color="#8A0041">แก้ไขข้อมูลส่วนตัว</h2></font>
   <form action="editprofile.php" method="post" enctype="multipart/form-data">
     <div class="user-box">
     <input id="photo" name="photo" type="file" required>

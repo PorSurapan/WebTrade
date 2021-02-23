@@ -14,7 +14,7 @@ session_start();
 <style>
     .button {
     border: none;
-    color: white;
+    color: black;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -38,7 +38,7 @@ var dateTime = date+' '+time;
 </head>
 <body> 
 <div class="login-box">
-    <h2>กระดานรีวิว</h2>
+    <h2><font color="#8A0041">กระดานรีวิว</h2></font>
 <form action="dashboard.php" method="post" enctype="multipart/form-data">
         <div class="user-box">
               <label for="picture" class="floatLabel">รูปภาพสินค้า</label>

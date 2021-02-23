@@ -1,6 +1,7 @@
 /*TODO: clean it all up, finish flex, add aesthetics, icons, redefine to be relative to vh-vw, maybe rework v2 variant using scss and frames and real transitions? */
 html body {
     margin: 0 0 0 0;
+    background-color: #FEFCF5;
   }
   .infocardContainer * {
     font-family: 'Fira Sans Condensed', sans-serif;

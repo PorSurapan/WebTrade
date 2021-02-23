@@ -5,7 +5,7 @@ body {
   margin:0;
   padding:0;
   font-family: sans-serif;
-  background: linear-gradient(#ffffff, #ffffff);
+  background-color: #FEFCF5;
 }
 
 .login-box {
@@ -15,11 +15,12 @@ body {
   width: 400px;
   padding: 25px;
   transform: translate(-50%, -50%);
-  background: rgba(12, 12, 12, 0.767);
+  background:linear-gradient(rgb(238, 192, 199), rgb(243, 243, 162));
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
   border-radius: 10px;
 }
+
 
 .login-box h2 {
   margin: 0 0 30px;
@@ -36,10 +37,10 @@ body {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
+  color: rgb(0, 0, 0);
   margin-bottom: 30px;
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid rgb(255, 255, 255);
   outline: none;
   background: transparent;
 }
@@ -48,7 +49,19 @@ body {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: rgb(212, 212, 212);
+  color: rgb(102, 101, 101);
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box textarea {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
   margin-bottom: 30px;
   border: none;
   border-bottom: 1px solid #fff;
@@ -62,21 +75,30 @@ body {
   left: 0;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
+  color: rgb(46, 39, 39);
   pointer-events: none;
   transition: .5s;
 }
 
+
 .login-box .user-box input:focus ~ label,
 .login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #c70801;
+  font-size: 12px;
+}
+
+.login-box .user-box select:focus ~ label,
+.login-box .user-box select:valid ~ label {
   top: -20px;
   left: 0;
   color: #03e9f4;
   font-size: 12px;
 }
 
-.login-box .user-box select:focus ~ label,
-.login-box .user-box select:valid ~ label {
+.login-box .user-box textarea:focus ~ label,
+.login-box .user-box textarea:valid ~ label {
   top: -20px;
   left: 0;
   color: #03e9f4;
@@ -98,13 +120,13 @@ body {
 }
 
 .login-box a:hover {
-  background: #03e9f4;
+  background: #05fa73;
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #03e9f4,
-              0 0 25px #03e9f4,
-              0 0 30px #03e9f4,
-              0 0 20px #03e9f4;
+  box-shadow: 0 0 5px #8ff885,
+              0 0 5px #8ff885,
+              0 0 5px #8ff885,
+              0 0 5px #8ff885;
 }
 
 .login-box a span {
@@ -117,7 +139,7 @@ body {
   left: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #03e9f4);
+  background: linear-gradient(90deg, transparent, #016d6d);
   animation: btn-anim1 1s linear infinite;
 }
 
@@ -135,7 +157,7 @@ body {
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, transparent, #03e9f4);
+  background: linear-gradient(180deg, transparent, #016d6d);
   animation: btn-anim2 1s linear infinite;
   animation-delay: .25s
 }
@@ -154,7 +176,7 @@ body {
   right: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(270deg, transparent, #03e9f4);
+  background: linear-gradient(270deg, transparent, #016d6d);
   animation: btn-anim3 1s linear infinite;
   animation-delay: .5s
 }
@@ -173,7 +195,7 @@ body {
   left: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(360deg, transparent, #03e9f4);
+  background: linear-gradient(360deg, transparent, #016d6d);
   animation: btn-anim4 1s linear infinite;
   animation-delay: .75s
 }

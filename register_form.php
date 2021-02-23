@@ -21,7 +21,7 @@
 <style>
     .button {
         border: none;
-        color: white;
+        color: black;
         text-align: center;
         text-decoration: none;
         display: inline-block;
@@ -36,7 +36,7 @@
 <body>
 <div class="login-box">
 <form action="register.php" method="post">
-    <h2>สมัครสมาชิก</h2>
+    <h2><font color="#8A0041">สมัครสมาชิก</font></h2>
 
         <div class="user-box">
               <label for="photo" class="floatLabel">อัพโหลด</label>

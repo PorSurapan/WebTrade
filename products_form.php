@@ -14,7 +14,7 @@ session_start();
 <style>
     .button {
     border: none;
-    color: white;
+    color: black;
     padding: 5px 15px;
     text-align: center;
     text-decoration: none;
@@ -30,10 +30,10 @@ session_start();
 </head>
 <body> 
 <div class="login-box">
-    <h2>สินค้าที่ต้องการเทรด</h2>
+    <h2><font color="#8A0041">สินค้าที่ต้องการเทรด</h2></font>
 <form action="products.php" method="post" enctype="multipart/form-data">
         <div class="user-box">
-              <label for="picture" class="floatLabel">รูปภาพสินค้า</label>
+              <label for="picture" class="floatLabel"><b>รูปภาพสินค้า</b></label>
               <br/><br/>
               <input id="picture" name="picture" type="file" required>
         </div>
@@ -50,7 +50,7 @@ session_start();
         </div>
 
         <div class="user-box">
-                <label for="category" class="floatLabel">ประเภทสินค้า</label>
+                <label for="category" class="floatLabel"><b>ประเภทสินค้า</b></label>
                 <br/><br/>
                 <select id="category" name="category" required>
                     <option value="ผลิตภัณฑ์สุขภาพ">ผลิตภัณฑ์สุขภาพ</option>
@@ -97,5 +97,7 @@ session_start();
 </form>
 </div>
         </center>
+
+        
 </body>
 </html>

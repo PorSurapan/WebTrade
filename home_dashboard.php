@@ -44,7 +44,7 @@
 <br/><br/><br/>
 </center>   
 
-<body>
+<body style="background-color: #FEFCF5;">
 	
 	<?php
         $conn = mysqli_connect("localhost", "root", "", "trader");
