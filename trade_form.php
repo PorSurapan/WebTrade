@@ -41,10 +41,8 @@ session_start();
         </div>
 
         <div class="user-box">
+              <input id="description" name="description" type="text" required>
               <label for="description" class="floatLabel">คำอธิบายสินค้า</label>
-              <br/><br/>
-              <textarea rows="4" cols="50" id="description" name="description">
-                </textarea>
         </div>
 
         <div class="user-box">

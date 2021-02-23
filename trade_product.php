@@ -14,7 +14,7 @@ session_start();
     <style>
 .button {
   border-radius: 4px;
-  background-color: #4CAF50;
+  background-color: #4a4a4a;
   border: none;
   color: #FFFFFF;
   text-align: center;
