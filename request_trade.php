@@ -14,9 +14,12 @@ session_start();
 </head>
 
 <body>
+
+
+
 <?php
         $id = $_GET['id'];
-        echo $id;
+        //echo $id;
 
         $conn = new mysqli("localhost", "root", "", "trader");
         $sql = "SELECT * FROM exchange WHERE id = $id";
@@ -64,18 +67,17 @@ session_start();
                                 <td> <label for="pname">ชื่อสินค้า</label> </td>
                                 <td> <?php echo $name; ?></td>
                             </tr>
-                            <tr></tr>
                             <tr>
-                                <td> <label for="describe">คำอธิบาย</label> </td>
-                                <td> <?php echo $des; ?></td>
+                                <td><br/><br/> <label for="describe">คำอธิบาย</label> </td>
+                                <td><br/><br/> <?php echo $des; ?></td>
                             </tr>
                             <tr>
-                                <td> <label for="describe">ติดต่อ</label> </td>
-                                <td> <?php echo $contact; ?></td>
+                                <td><br/><br/> <label for="describe">ติดต่อ</label> </td>
+                                <td><br/><br/> <?php echo $contact; ?></td>
                             </tr>
                             <tr>
-                                <td> <label for="status">สถานะ</label> </td>
-                                <td>
+                                <td><br/><br/> <label for="status">สถานะ</label> </td>
+                                <td><br/><br/>
                                     <select id="status" name="status" required>
                                         <option value="<?php echo $status; ?>" selected hidden ><?php echo $status; ?></option>
                                         <option value="ยอมรับ">ยอมรับ</option>
@@ -100,7 +102,6 @@ session_start();
                     <td>
                         <br /><br />
                         <input type="submit" value="แลกเปลี่ยน">
-                        <input type="hidden" name="exID" value="<?php echo $pid; ?>">
                         <input type="hidden"  name="owner" value="<?php echo $own;?>">
                         <input type="hidden" name="prodID" value="<?php echo $product; ?>">
                     </td>
