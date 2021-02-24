@@ -1,9 +1,6 @@
 <?php
 session_start();
-	if(isset($_SESSION['s_username']) && $_SESSION['logged'] == true)
-		include("config_header.php");
-	else
-        header("Location: login.html");
+include("header_sender.html");
 ?>
 
 <!DOCTYPE HTML>
@@ -11,7 +8,7 @@ session_start();
 <head>
 <link rel="stylesheet" href="edit_form.css">
  <meta charset="utf-8">
- <title>Trade - ข้อมูลเชิงลึก</title>
+ <title>จัดอันดับ</title>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     
     <script type="text/javascript">
@@ -22,7 +19,7 @@ session_start();
        function drawStuff() {
         var data = new google.visualization.arrayToDataTable([
  
-       ['ผู้ลงของเทรด','ID'],
+       ['ประเภทยอดฮิต','ID'],
  
  
  
@@ -31,12 +28,12 @@ session_start();
                     $id = $_SESSION['s_id'];
 
                     $con = mysqli_connect('localhost','root','','trader');
-        			$sql = "SELECT * FROM products WHERE owner = $id";
+        			$sql = "SELECT * FROM chart";
         			$rs = $con->query($sql);
 
         			foreach($rs as $rs_c){
 
-        			echo "['".$rs_c['owner']."',".$rs_c['id']."],";
+        			echo "['".$rs_c['category']."',".$rs_c['count']."],";
 
         			 }
         ?> 
@@ -47,7 +44,7 @@ session_start();
           title: 'Chess opening moves',
           width: 900,
           legend: { position: 'none' },
-          chart: { title: 'จำนวนลงสินค้า',
+          chart: { title: 'ประเภทที่นิยมลงเทรด',
                     },
           bars: 'horizontal', // Required for Material Bar Charts.
           
