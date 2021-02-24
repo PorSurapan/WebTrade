@@ -84,7 +84,6 @@
 					<option value="เกมและฮ๊อบบี้">เกมและฮ๊อบบี้</option>
 					<option value="ยานยนต์">ยานยนต์</option>
 					<option value="ของเล่น">ของเล่น</option>
-					<option value="เครื่องใช้ในบ้าน">เครื่องใช้ในบ้าน</option>
 					<option value="กระเป๋า">กระเป๋า</option>
 					<option value="เครื่องใช้ในบ้าน">เครื่องใช้ในบ้าน</option>
 					<option value="เครื่องประดับ">เครื่องประดับ</option>
