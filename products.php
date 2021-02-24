@@ -41,23 +41,23 @@
 
 	$count = 0;
 	$sql = "SELECT * FROM products WHERE category = '$cat'";
-	echo "sql: " . $sql;
+	//echo "sql: " . $sql;
 	$rs = $conn->query($sql);
 
 	while($row = $rs->fetch_assoc()) {
 		$count = $count + 1;
 	}
-	echo "count: " . $count;
+	//echo "count: " . $count;
 
 	mysqli_select_db($conn, "trader");
-	$sql1 = "UPDATE chart SET count=$count WHERE category = '$cat'";
-	$result = mysqli_query($conn, $sql);
-	echo "sql1: " . $sql1;
+	$sql1 = "UPDATE chart SET count = '$count' WHERE category = '$cat'";
+	$result = mysqli_query($conn, $sql1);
+	//echo "sql1: " . $sql1;
 
 	if(!$result){
 		die('Error query: ' . mysqli_error());
 	} else {
-		echo "ddddd";
+		header("Location: home.php");	
 	}
 
 	$conn->close();
