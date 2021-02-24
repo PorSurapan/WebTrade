@@ -19,7 +19,7 @@ include("header_sender.html");
        function drawStuff() {
         var data = new google.visualization.arrayToDataTable([
  
-       ['ประเภทยอดฮิต','ID'],
+       ['ประเภทยอดฮิต','จำนวน'],
  
  
  
