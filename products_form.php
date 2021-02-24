@@ -65,7 +65,6 @@ session_start();
                     <option value="ของเล่น">ของเล่น</option>
                     <option value="เครื่องใช้ในบ้าน">เครื่องใช้ในบ้าน</option>
                     <option value="กระเป๋า">กระเป๋า</option>
-                    <option value="เครื่องใช้ในบ้าน">เครื่องใช้ในบ้าน</option>
                     <option value="เครื่องประดับ">เครื่องประดับ</option>
                     <option value="เครื่องใช้ไฟฟ้าภายในบ้าน">เครื่องใช้ไฟฟ้าภายในบ้าน</option>
                     <option value="สัตว์เลี้ยง">สัตว์เลี้ยง</option>
